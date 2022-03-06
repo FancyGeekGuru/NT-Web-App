@@ -1,0 +1,50 @@
+.section-2, .section-3, .section-4 {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.epad-account-heading {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bolder !important;
+  margin-bottom: 10px;
+}
+
+.epad-account-claim {
+  position: static;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.epad-presale-buy-button[disabled] {
+  border-color: #33333366;
+  color: #33333366;
+  background-color: #55555566;
+
+  &:hover, &:focus {
+    border-color: #33333366;
+    color: #33333366;
+    background-color: #55555566;
+  }
+}

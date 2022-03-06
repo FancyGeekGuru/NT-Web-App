@@ -1,0 +1,65 @@
+.section-2, .section-3, .section-4 {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.epad-presale-top {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.heading-7.textblack {
+  font-weight: bolder !important;
+  line-height: 6rem;
+}
+
+.epad-presale-prograssbar {
+  width: 100%;
+  margin-bottom: 1rem;
+  height: 1.6rem !important;
+
+  border-style: solid;
+  border-width: 3px;
+  border-color: #696969;
+  border-radius: 20px !important;
+
+  .progress-bar {
+    background-color: #3dffbe;
+  }
+}
+
+.epad-presale-number-input {
+  margin-left: 10px;
+  border: none;
+  width: 70%;
+
+  &:focus-visible {
+    outline: none !important;
+  }
+}
+
+.epad-presale-buy-button {
+  text-decoration: none !important;
+
+  &:hover, &:focus {
+    color: #222222cc;
+    background-color: #85ffd6;
+  }
+}
+
+.epad-presale-status-title {
+  text-align: center;
+  font-weight: bolder !important;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.epad-presale-whitelist-info {
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
