@@ -136,6 +136,7 @@
 
 .custom-timer {
     margin-top: 1rem;
+    margin-bottom: 3rem;
 
     display: flex;
     flex-direction: row;
@@ -152,5 +153,29 @@
     .customer-timer-uint {
         font-size: 1rem;
         color: $color-blue-1;
+    }
+}
+
+////////////////////////////
+.custom-progress-container {
+    margin-bottom: 1rem;
+
+    .progress {
+        height: 24px !important;
+        border-radius: 20px !important;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+        .progress-bar {
+            background-color: $color-blue-1 !important;
+            border-radius: 20px !important;
+            box-shadow: 0 0 15px #008cff;
+        }
+    }
+
+    .custome-progress-number {
+        margin-top: 1rem;
+        text-align: center;
+        font-family: $number-font;
+        font-size: 1.2rem !important;
     }
 }

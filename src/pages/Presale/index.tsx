@@ -45,7 +45,7 @@ import {
 const Presale = () => {
   const { account } = useGetAccountInfo();
 
-  // const tokenSaleTargetRef = React.useRef(null);
+  const tokenSaleTargetRef = React.useRef(null);
 
   // const saleStatus = React.useContext<ISaleStatusProvider | undefined>(SaleStatusContext);
   // const accountState = React.useContext<IAccountStateProvider | undefined>(AccountStateContext);
@@ -130,6 +130,11 @@ const Presale = () => {
                   <div className='customer-timer-uint'>Secs</div>
                 </Col>
               </Row>
+
+              <div className='custom-progress-container'>
+                <ProgressBar now={30} ref={tokenSaleTargetRef} />
+                <div className='custome-progress-number'>250000 / 500000 BITX</div>
+              </div>
             </div>
           </Col>
           <Col md={12} lg={6} className='custom-presale-col'>
