@@ -108,11 +108,11 @@ const Presale = () => {
         <Row>
           <Col md={12} lg={6} className='custom-presale-col'>
             <div className='custom-presale-left'>
-              <h1 className='custom-presale-header'>Token Sale Is Live!</h1>
+              <h1 className='custom-presale-header color-white'>Token Sale Is Live!</h1>
               <div className='custom-presale-info'>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div>
 
               <div className='custom-timer-header'>Last Moment To Grab The Tokens</div>
-              <Row className='custom-timer'>
+              <Row className='custom-timer color-white'>
                 <Col xs={6} sm={3} className='customer-timer-block'>
                   <div className='customer-timer-time'>00</div>
                   <div className='customer-timer-uint'>Days</div>
@@ -133,30 +133,30 @@ const Presale = () => {
 
               <div className='custom-progress-container'>
                 <ProgressBar now={30} ref={tokenSaleTargetRef} />
-                <div className='custome-progress-number'>250000 / 500000 BITX</div>
+                <div className='custome-progress-number color-white'>250000 / 500000 BITX</div>
               </div>
             </div>
           </Col>
           <Col md={12} lg={6} className='custom-presale-col'>
             <div className='custom-buy-card'>
               <div className='custom-buy-card-body'>
-                <h3 className='custom-buy-card-header'>BUY TOKENS HERE</h3>
+                <h3 className='custom-buy-card-header color-white'>BUY TOKENS HERE</h3>
                 <div className='custom-buy-card-amount'>
                   <div className='custom-buy-card-amount-header'>AMOUNT TO PAY</div>
                   <div className='custom-buy-card-amount-container'>
                     <input className='custom-buy-card-amount-input' type='number' />
-                    <span className='custom-buy-card-amount-unit'>EGLD</span>
+                    <span className='custom-buy-card-amount-unit color-white'>EGLD</span>
                   </div>
                 </div>
                 <div className='custom-buy-card-amount'>
                   <div className='custom-buy-card-amount-header'>AMOUNT TO GET</div>
                   <div className='custom-buy-card-amount-container'>
                     <input className='custom-buy-card-amount-input' type='number' disabled={true} />
-                    <span className='custom-buy-card-amount-unit'>SVEN</span>
+                    <span className='custom-buy-card-amount-unit color-white'>SVEN</span>
                   </div>
                 </div>
-                <div className='custom-buy-card-info'>Minimum Buy Amount:&nbsp;&nbsp;<b>0.2 EGLD</b></div>
-                <div className='custom-buy-card-info'>Maximum Buy Amount:&nbsp;&nbsp;<b>1 EGLD</b></div>
+                <div className='custom-buy-card-info color-white'>Minimum Buy Amount:&nbsp;&nbsp;<b>0.2 EGLD</b></div>
+                <div className='custom-buy-card-info color-white'>Maximum Buy Amount:&nbsp;&nbsp;<b>1 EGLD</b></div>
               </div>
               <div className='custom-buy-card-footer'>
                 <div className='custom-buy-card-buy-button'>Buy SVEN</div>

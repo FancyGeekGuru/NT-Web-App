@@ -1,7 +1,6 @@
 import { dAppName } from 'config';
 import withPageTitle from './components/PageTitle';
 import Presale from './pages/Presale';
-import Account from './pages/Account';
 
 export const routeNames = {
   dashboard: '/dashboard',
@@ -18,12 +17,6 @@ const routes: Array<any> = [
     path: routeNames.presale,
     title: 'Presale',
     component: Presale
-  },
-  {
-    path: routeNames.account,
-    title: 'Account',
-    component: Account,
-    authenticatedRoute: true
   }
 ];
 

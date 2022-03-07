@@ -7,6 +7,7 @@ $number-font: 'Nunito', sans-serif;
 
 /// colors
 $color-white-1: #f0f0f0;
+$color-white-2: #a0a0a0;
 $color-grey-1: #545454;
 $color-green-1: #00F69E;
 $color-green-2: #00ffa6;
@@ -23,7 +24,6 @@ $font-button-size-1: 1.2rem;
 
 * {
     font-family: $main-font;
-    color: $color-white-1;
 }
 
 .custom-link-button {
