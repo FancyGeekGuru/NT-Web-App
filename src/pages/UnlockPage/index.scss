@@ -3,3 +3,12 @@
 .color-black {
     color: $color-black-1;
 }
+
+.custom-unlock-card {
+    border-radius: 0px !important;
+    box-shadow: 0 14px 0px -8px rgba(255, 255, 255, 0.4), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    .btn.btn-primary {
+        border-radius: 50px !important;
+    }
+}

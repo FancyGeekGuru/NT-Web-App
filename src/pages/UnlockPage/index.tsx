@@ -3,7 +3,7 @@ import { DappUI, useGetLoginInfo } from '@elrondnetwork/dapp-core';
 import { routeNames } from 'routes';
 import './index.scss';
 
-export const UnlockRoute: () => JSX.Element = () => {
+export const UnlockRoute: ({ loginRoute } : {loginRoute: string}) => JSX.Element = ({ loginRoute }) => {
   const {
     ExtensionLoginButton,
     WebWalletLoginButton,
@@ -14,33 +14,33 @@ export const UnlockRoute: () => JSX.Element = () => {
 
   React.useEffect(() => {
     if (isLoggedIn) {
-      window.location.href = routeNames.dashboard;
+      window.location.href = loginRoute;
     }
   }, [isLoggedIn]);
 
   return (
     <div className='home d-flex flex-fill align-items-center'>
       <div className='m-auto' data-testid='unlockPage'>
-        <div className='card my-4 text-center'>
+        <div className='custom-unlock-card card my-4 text-center'>
           <div className='card-body py-4 px-2 px-sm-2 mx-lg-4'>
             <h4 className='mb-4 color-black'>Login</h4>
             <p className='mb-4 color-black'>pick a login method</p>
 
             <ExtensionLoginButton
-              callbackRoute={routeNames.dashboard}
+              callbackRoute={loginRoute}
               loginButtonText={'Extension'}
             />
             <WebWalletLoginButton
-              callbackRoute={routeNames.dashboard}
+              callbackRoute={loginRoute}
               loginButtonText={'Web wallet'}
             />
             <LedgerLoginButton
               loginButtonText={'Ledger'}
-              callbackRoute={routeNames.dashboard}
+              callbackRoute={loginRoute}
               className={'test-class_name'}
             />
             <WalletConnectLoginButton
-              callbackRoute={routeNames.dashboard}
+              callbackRoute={loginRoute}
               loginButtonText={'Maiar'}
             />
           </div>

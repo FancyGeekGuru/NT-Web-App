@@ -3,13 +3,10 @@ import withPageTitle from './components/PageTitle';
 import Presale from './pages/Presale';
 
 export const routeNames = {
-  dashboard: '/dashboard',
-  transaction: '/transaction',
   unlock: '/unlock',
   ledger: '/ledger',
   walletconnect: '/walletconnect',
   presale: '/',
-  account: '/account',
 };
 
 const routes: Array<any> = [

@@ -3,6 +3,7 @@ import { DappUI, DappProvider } from '@elrondnetwork/dapp-core';
 import { Route, Routes, BrowserRouter as Router, Navigate } from 'react-router-dom';
 import Layout from 'components/Layout';
 import PageNotFound from 'pages/PageNotFound';
+import UnlockRoute from 'pages/UnlockPage';
 import { routeNames } from 'routes';
 import routes from 'routes';
 import '@elrondnetwork/dapp-core/build/index.css';
@@ -120,7 +121,7 @@ const ContextWrapper = () => {
                     <Routes>
                         <Route
                         path={routeNames.unlock}
-                        element={<UnlockPage loginRoute={routeNames.presale} />}
+                        element={<UnlockRoute loginRoute={routeNames.presale} />}
                         />
                         {routes.map((route: any, index: number) => (
                             <Route
