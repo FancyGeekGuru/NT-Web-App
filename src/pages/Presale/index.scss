@@ -56,7 +56,7 @@
     }
 
     .custom-buy-card-amount-header {
-        color: $color-grey-1;
+        color: $color-white-2;
         margin-bottom: .6rem;
     }
 
@@ -74,6 +74,7 @@
             padding: 8px 20px;
             margin-right: 4px;
             font-family: $number-font;
+            color: $color-white-1;
 
             &:hover, &:focus {
                 outline: none;
@@ -112,10 +113,12 @@
     background-color: $color-black-2;
 
     .custom-buy-card-buy-button {
+        display: block;
         border-radius: 50px;
-        padding: .8rem 1.2rem;
-        margin-left: 1rem;
-        margin-right: 1rem;
+        width: 80%;
+        padding: .6rem 1.2rem;
+        margin-left: auto;
+        margin-right: auto;
         text-align: center;
         font-size: $font-button-size-1;
         color: $color-black-0;
@@ -127,6 +130,20 @@
             background-color: $color-green-2;
             box-shadow: 0 0 6px #9ecaed;
         }
+
+        &:disabled {
+            background-color: $color-grey-1;
+            box-shadow: none;
+            color: $color-black-1;
+            cursor: initial;
+        }
+    }
+
+    .custom-buy-card-buy-state-info {
+        color: $color-green-1;
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 1rem;
     }
 }
 

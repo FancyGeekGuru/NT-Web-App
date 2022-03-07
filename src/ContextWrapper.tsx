@@ -26,12 +26,11 @@ import {
   useGetPendingTransactions,
 } from '@elrondnetwork/dapp-core';
 
-import { CONTRACT_ADDRESS, CONTRACT_ABI_URL, CONTRACT_NAME, TOTAL_RELEASE_COUNT } from './config';
+import { CONTRACT_ADDRESS, CONTRACT_ABI_URL, CONTRACT_NAME } from './config';
 import { sendQuery } from './utils/transaction';
 import {
     convertToStatus,
-    ISaleStatusProvider,
-    IAccountStateProvider
+    ISaleStatusProvider
 } from './utils/state';
 import { SECOND_IN_MILLI, TIMEOUT } from './utils/const';
 import { convertWeiToEgld } from './utils/convert';
@@ -46,8 +45,6 @@ const {
 
 export const ContractContext = React.createContext<any>(undefined);
 export const SaleStatusContext = React.createContext<ISaleStatusProvider | undefined>(undefined);
-export const AccountStateContext = React.createContext<IAccountStateProvider | undefined>(undefined);
-
 
 const ContextWrapper = () => {
   const { network } = useGetNetworkConfig();
@@ -88,53 +85,29 @@ const ContextWrapper = () => {
     })();
   }, [contract, hasPendingTransactions]);
 
-  const [accountState, setAccountState] = React.useState<IAccountStateProvider>();
-  React.useEffect(() => {
-    (async () => {
-      if (!contract) return;
-      const args = [new AddressValue(new Address(account.address))];
-      const interaction: Interaction = contract.methods.getAccountState(args);
-      const res: QueryResponseBundle | undefined = await sendQuery(contract, proxy, interaction);
-      if (!res || !res.returnCode.isSuccess()) return;
-      const value = res.firstValue.valueOf();
-
-      const boughtAmount = convertWeiToEgld(value.field0.toNumber());
-      const lockedAmount = convertWeiToEgld(value.field1.toNumber());
-      const claimedReleaseCount = value.field2.toNumber();
-      const claimableReleaseCount = value.field3.toNumber();
-      const isInWhitelist = value.field4;
-
-      const claimableAmount = lockedAmount * claimableReleaseCount / TOTAL_RELEASE_COUNT;
-      
-      setAccountState({boughtAmount, lockedAmount, claimableAmount, claimedReleaseCount, claimableReleaseCount, isInWhitelist});
-    })();
-  }, [contract, hasPendingTransactions]);
-
   return (
     <ContractContext.Provider value={contract}>
-        <SaleStatusContext.Provider value={saleStatus}>
-            <AccountStateContext.Provider value={accountState}>
-                <Layout>
-                    <TransactionsToastList />
-                    <NotificationModal />
-                    <SignTransactionsModals className='custom-class-for-modals' />
-                    <Routes>
-                        <Route
-                        path={routeNames.unlock}
-                        element={<UnlockRoute loginRoute={routeNames.presale} />}
-                        />
-                        {routes.map((route: any, index: number) => (
-                            <Route
-                            path={route.path}
-                            key={'route-key-' + index}
-                            element={<route.component />}
-                            />
-                        ))}
-                        <Route path='*' element={<PageNotFound />} />
-                    </Routes>
-                </Layout>
-            </AccountStateContext.Provider>
-        </SaleStatusContext.Provider>
+      <SaleStatusContext.Provider value={saleStatus}>
+        <Layout>
+            <TransactionsToastList />
+            <NotificationModal />
+            <SignTransactionsModals className='custom-class-for-modals' />
+            <Routes>
+                <Route
+                path={routeNames.unlock}
+                element={<UnlockRoute loginRoute={routeNames.presale} />}
+                />
+                {routes.map((route: any, index: number) => (
+                    <Route
+                    path={route.path}
+                    key={'route-key-' + index}
+                    element={<route.component />}
+                    />
+                ))}
+                <Route path='*' element={<PageNotFound />} />
+            </Routes>
+        </Layout>
+      </SaleStatusContext.Provider>
     </ContractContext.Provider>
   );
 };

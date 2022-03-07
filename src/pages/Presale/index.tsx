@@ -22,7 +22,6 @@ import Time from './Time';
 import {
   ContractContext,
   SaleStatusContext,
-  AccountStateContext,
 } from '../../ContextWrapper';
 import {
   Status,
@@ -39,7 +38,9 @@ import {
 } from '../../utils/const';
 import {
   EXCHANGE_RATE,
-  CONTRACT_ADDRESS
+  CONTRACT_ADDRESS,
+  MIN_BUY_LIMIT,
+  MAX_BUY_LIMIT
 } from '../../config';
 
 const Presale = () => {
@@ -47,60 +48,55 @@ const Presale = () => {
 
   const tokenSaleTargetRef = React.useRef(null);
 
-  // const saleStatus = React.useContext<ISaleStatusProvider | undefined>(SaleStatusContext);
-  // const accountState = React.useContext<IAccountStateProvider | undefined>(AccountStateContext);
+  const saleStatus = React.useContext<ISaleStatusProvider | undefined>(SaleStatusContext);
 
-  // const [buyAmountInEgld, setBuyAmountInEgld] = React.useState<number>(0);
-  // const [buyAmountInEsdt, setBuyAmountInEsdt] = React.useState<number>(0);
+  const [buyAmountInEgld, setBuyAmountInEgld] = React.useState<number>(0);
+  const [buyAmountInEsdt, setBuyAmountInEsdt] = React.useState<number>(0);
 
-  // const [buyButtonDisabled, setBuyButtonDisabled] = React.useState<boolean>(true);
+  const [buyButtonDisabled, setBuyButtonDisabled] = React.useState<boolean>(true);
 
-  // const onBuyAmountInEgld = (e: any) => {
-  //   e.preventDefault();
-  //   setBuyAmountInEgld(e.target.value);
-  //   setBuyAmountInEsdt(precisionRound(e.target.value / EXCHANGE_RATE));
-  // };
+  const [buyStateInfo, setBuyStateInfo] = React.useState<string>('');
 
-  // React.useEffect(() => {
-  //   let disabled = true;
-  //   if (saleStatus && saleStatus.status == Status.Started) {
-  //     if (accountState){
-  //       // for whitelist member
-  //       if (accountState.isInWhitelist) {
-  //         disabled = false;
-  //       }
-  //       // for non-whitelist member
-  //       // if current timestamp is after 24 hours later presale start
-  //       else if ((new Date()).getTime() < (saleStatus.leftTimestamp + ONE_DAY_IN_SECONDS) * SECOND_IN_MILLI) {
-  //         // if logged in (a wallet is connected)
-  //         if (account.address) {
-  //           disabled = false;
-  //         }
-  //       }
-  //     }
-  //   }
-  //   if (disabled != buyButtonDisabled) {
-  //     setBuyButtonDisabled(disabled);
-  //   }
-  // }, [saleStatus, accountState, buyAmountInEgld]);
+  const onChangeBuyAmountInEgld = (e: any) => {
+    e.preventDefault();
+    setBuyAmountInEgld(e.target.value);
+    setBuyAmountInEsdt(precisionRound(e.target.value / EXCHANGE_RATE));
+  };
 
-  // async function buyToken(e: any) {
-  //   e.preventDefault();
-  //   const tx = {
-  //     value: Balance.egld(buyAmountInEgld),
-  //     data: 'buy',
-  //     receiver: CONTRACT_ADDRESS,
-  //     gasLimit: 10000000,
-  //   };
-  //   await refreshAccount();
-  //   await sendTransactions({
-  //     transactions: tx,
-  //     transactionsDisplayInfo: {
-  //       errorMessage: 'An error has occured while buying tokens.',
-  //       successMessage: 'Go to Account page and check your account state.'
-  //     },
-  //   });
-  // }
+  React.useEffect(() => {
+    let disabled = true;
+    let stateInfo = '';
+    if (saleStatus && saleStatus.status == Status.Started) {
+      if (account?.address){
+        if (MIN_BUY_LIMIT <= buyAmountInEgld && buyAmountInEgld <= MAX_BUY_LIMIT) {
+          disabled = false;
+        }
+        else {
+          stateInfo = 'You can only buy tokens between min and max amount.';  
+        }
+      }
+      else {
+        stateInfo = 'You should login to buy tokens.';
+      }
+    }
+
+    setBuyButtonDisabled(disabled);
+    setBuyStateInfo(stateInfo);
+  }, [saleStatus, buyAmountInEgld]);
+
+  async function buyToken(e: any) {
+    e.preventDefault();
+    const tx = {
+      value: Balance.egld(buyAmountInEgld),
+      data: 'buy',
+      receiver: CONTRACT_ADDRESS,
+      gasLimit: 10000000,
+    };
+    await refreshAccount();
+    await sendTransactions({
+      transactions: tx
+    });
+  }
 
   return (
     <>
@@ -108,32 +104,16 @@ const Presale = () => {
         <Row>
           <Col md={12} lg={6} className='custom-presale-col'>
             <div className='custom-presale-left'>
-              <h1 className='custom-presale-header color-white'>Token Sale Is Live!</h1>
+              <h1 className='custom-presale-header color-white'>Token Sale Is {saleStatus?.status == Status.NotStarted ? 'Coming' : (saleStatus?.status == Status.Started ? 'Live' : 'Ended')}!</h1>
               <div className='custom-presale-info'>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div>
 
               <div className='custom-timer-header'>Last Moment To Grab The Tokens</div>
-              <Row className='custom-timer color-white'>
-                <Col xs={6} sm={3} className='customer-timer-block'>
-                  <div className='customer-timer-time'>00</div>
-                  <div className='customer-timer-uint'>Days</div>
-                </Col>
-                <Col xs={6} sm={3} className='customer-timer-block'>
-                  <div className='customer-timer-time'>00</div>
-                  <div className='customer-timer-uint'>Hours</div>
-                </Col>
-                <Col xs={6} sm={3} className='customer-timer-block'>
-                  <div className='customer-timer-time'>00</div>
-                  <div className='customer-timer-uint'>Mins</div>
-                </Col>
-                <Col xs={6} sm={3} className='customer-timer-block'>
-                  <div className='customer-timer-time'>00</div>
-                  <div className='customer-timer-uint'>Secs</div>
-                </Col>
-              </Row>
+              
+              <Time />
 
               <div className='custom-progress-container'>
                 <ProgressBar now={30} ref={tokenSaleTargetRef} />
-                <div className='custome-progress-number color-white'>250000 / 500000 BITX</div>
+                <div className='custome-progress-number color-white'>{saleStatus?.totalBoughtAmountOfEsdt} / {saleStatus?.goal} BITX</div>
               </div>
             </div>
           </Col>
@@ -144,22 +124,23 @@ const Presale = () => {
                 <div className='custom-buy-card-amount'>
                   <div className='custom-buy-card-amount-header'>AMOUNT TO PAY</div>
                   <div className='custom-buy-card-amount-container'>
-                    <input className='custom-buy-card-amount-input' type='number' />
+                    <input className='custom-buy-card-amount-input' type='number' onChange={onChangeBuyAmountInEgld} defaultValue={buyAmountInEgld} />
                     <span className='custom-buy-card-amount-unit color-white'>EGLD</span>
                   </div>
                 </div>
                 <div className='custom-buy-card-amount'>
                   <div className='custom-buy-card-amount-header'>AMOUNT TO GET</div>
                   <div className='custom-buy-card-amount-container'>
-                    <input className='custom-buy-card-amount-input' type='number' disabled={true} />
+                    <input className='custom-buy-card-amount-input' type='number' disabled={true} value={buyAmountInEsdt} />
                     <span className='custom-buy-card-amount-unit color-white'>SVEN</span>
                   </div>
                 </div>
-                <div className='custom-buy-card-info color-white'>Minimum Buy Amount:&nbsp;&nbsp;<b>0.2 EGLD</b></div>
-                <div className='custom-buy-card-info color-white'>Maximum Buy Amount:&nbsp;&nbsp;<b>1 EGLD</b></div>
+                <div className='custom-buy-card-info color-white'>Minimum Buy Amount:&nbsp;&nbsp;<b>{MIN_BUY_LIMIT} EGLD</b></div>
+                <div className='custom-buy-card-info color-white'>Maximum Buy Amount:&nbsp;&nbsp;<b>{MAX_BUY_LIMIT} EGLD</b></div>
               </div>
               <div className='custom-buy-card-footer'>
-                <div className='custom-buy-card-buy-button'>Buy SVEN</div>
+                <button className='custom-buy-card-buy-button' onClick={buyToken} disabled={buyButtonDisabled}>Buy SVEN</button>
+                <div className='custom-buy-card-buy-state-info'>{buyStateInfo}</div>
               </div>
             </div>
           </Col>

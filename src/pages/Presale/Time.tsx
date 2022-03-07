@@ -1,6 +1,12 @@
 import * as React from 'react';
 import Countdown from 'react-countdown';
 import './Time.scss';
+import {
+  Container,
+  Row,
+  Col,
+  ProgressBar
+} from 'react-bootstrap';
 
 import {
   SaleStatusContext,
@@ -29,24 +35,24 @@ const Time = () => {
     // console.log('>>> in timer: ',days, hours, minutes, seconds, completed);
 
     return (
-        <div id='js-clock' className='js-clock-2'>
-            <div className='box'>
-              <div id='js-clock-days' className='clock-number textblack'>{paddingTwoDigits(days)}</div>
-              <div className='clock-label textblack'>Days</div>
-            </div>
-            <div className='box'>
-              <div id='js-clock-hours' className='clock-number textblack'>{paddingTwoDigits(hours)}</div>
-              <div className='clock-label textblack'>Hrs</div>
-            </div>
-            <div className='box'>
-              <div id='js-clock-minutes' className='clock-number textblack'>{paddingTwoDigits(minutes)}</div>
-              <div className='clock-label textblack'>Min</div>
-            </div>
-            <div className='box'>
-              <div id='js-clock-seconds' className='clock-number textblack'>{paddingTwoDigits(seconds)}</div>
-              <div className='clock-label textblack'>Sec</div>
-            </div>
-        </div>
+      <Row className='custom-timer color-white'>
+        <Col xs={6} sm={3} className='customer-timer-block'>
+          <div className='customer-timer-time'>{paddingTwoDigits(days)}</div>
+          <div className='customer-timer-uint'>Days</div>
+        </Col>
+        <Col xs={6} sm={3} className='customer-timer-block'>
+          <div className='customer-timer-time'>{paddingTwoDigits(hours)}</div>
+          <div className='customer-timer-uint'>Hours</div>
+        </Col>
+        <Col xs={6} sm={3} className='customer-timer-block'>
+          <div className='customer-timer-time'>{paddingTwoDigits(minutes)}</div>
+          <div className='customer-timer-uint'>Mins</div>
+        </Col>
+        <Col xs={6} sm={3} className='customer-timer-block'>
+          <div className='customer-timer-time'>{paddingTwoDigits(seconds)}</div>
+          <div className='customer-timer-uint'>Secs</div>
+        </Col>
+      </Row>
     );
   };
   
