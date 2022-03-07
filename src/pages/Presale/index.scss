@@ -124,3 +124,33 @@
         }
     }
 }
+
+
+////////////////////////////
+.custom-timer-header {
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 1.6rem;
+    color: $color-green-1;
+}
+
+.custom-timer {
+    margin-top: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    .customer-timer-time {
+        font-size: 3rem;
+        font-family: $number-font;
+    }
+
+    .customer-timer-uint {
+        font-size: 1rem;
+        color: $color-blue-1;
+    }
+}

@@ -109,7 +109,27 @@ const Presale = () => {
           <Col md={12} lg={6} className='custom-presale-col'>
             <div className='custom-presale-left'>
               <h1 className='custom-presale-header'>Token Sale Is Live!</h1>
-              <span className='custom-presale-info'>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</span>
+              <div className='custom-presale-info'>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div>
+
+              <div className='custom-timer-header'>Last Moment To Grab The Tokens</div>
+              <Row className='custom-timer'>
+                <Col xs={6} sm={3} className='customer-timer-block'>
+                  <div className='customer-timer-time'>00</div>
+                  <div className='customer-timer-uint'>Days</div>
+                </Col>
+                <Col xs={6} sm={3} className='customer-timer-block'>
+                  <div className='customer-timer-time'>00</div>
+                  <div className='customer-timer-uint'>Hours</div>
+                </Col>
+                <Col xs={6} sm={3} className='customer-timer-block'>
+                  <div className='customer-timer-time'>00</div>
+                  <div className='customer-timer-uint'>Mins</div>
+                </Col>
+                <Col xs={6} sm={3} className='customer-timer-block'>
+                  <div className='customer-timer-time'>00</div>
+                  <div className='customer-timer-uint'>Secs</div>
+                </Col>
+              </Row>
             </div>
           </Col>
           <Col md={12} lg={6} className='custom-presale-col'>

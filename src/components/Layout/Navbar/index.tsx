@@ -17,7 +17,7 @@ const Navbar = () => {
   const isLoggedIn = Boolean(address);
 
   return (
-    <BsNavbar collapseOnSelect className='' expand='md'>
+    <BsNavbar collapseOnSelect className='' expand='md' variant='dark'>
       <Container>
         <BsNavbar.Brand>
           <Link

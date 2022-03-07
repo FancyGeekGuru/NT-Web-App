@@ -28,4 +28,20 @@
     font-size: $font-button-size-1;
     padding: .5rem 2rem;
     border-radius: 50px;
+    margin-top: .4rem;
+    margin-bottom: .4rem;
+
+    // transition: all 0.1s ease;
+}
+
+.navbar-toggler {
+    color: $color-white-1 !important;
+}
+
+@media screen and (max-width: 768px) {
+    #responsive-navbar-nav {
+        padding: 1rem 2rem !important;
+        background-color: #ffffff33;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 }
