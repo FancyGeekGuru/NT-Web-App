@@ -1,6 +1,6 @@
 import React from 'react';
 import { logout, useGetAccountInfo } from '@elrondnetwork/dapp-core';
-import { Navbar as BsNavbar, NavItem, Nav } from 'react-bootstrap';
+import { Navbar as BsNavbar, NavItem, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { dAppName } from 'config';
 import { routeNames } from 'routes';
@@ -17,38 +17,35 @@ const Navbar = () => {
   const isLoggedIn = Boolean(address);
 
   return (
-    <BsNavbar collapseOnSelect className='hero' expand='md'>
-      {/* <div className='container'> */}
-      <BsNavbar.Brand>
-        <Link
-          className='d-flex align-items-center navbar-brand mr-0'
-          to={routeNames.presale}
-        >
-          <div className='epad-logo'>ePAD</div>
-        </Link>
-      </BsNavbar.Brand>
-      <BsNavbar.Toggle aria-controls='responsive-navbar-nav' />
-      <BsNavbar.Collapse id='responsive-navbar-nav' className='nav-menu-wrap epad-nav-collapse'>
-        <Nav role='navigation' className='ml-auto'>
-          <Link to={ routeNames.presale } aria-current='page' className='epad-nav-link'>
-            Buy EPAD
+    <BsNavbar collapseOnSelect className='' expand='md'>
+      <Container>
+        <BsNavbar.Brand>
+          <Link
+            className='d-flex align-items-center navbar-brand mr-0'
+            to={routeNames.presale}
+          >
+            <div className='custom-logo'>Bitxfinance</div>
           </Link>
-          <Link to={ routeNames.account } aria-current='page' className='epad-nav-link'>
-            My Account
-          </Link>
-          <div style={{ width: '2rem' }}></div>
-          {isLoggedIn ? (
-            <NavItem className='epad-nav-auth-button' onClick={handleLogout}>
-                Logout
-            </NavItem>
-          ) : (
-            <Link to={ routeNames.unlock } className='epad-nav-auth-button'>
-                Login
+        </BsNavbar.Brand>
+        <BsNavbar.Toggle aria-controls='responsive-navbar-nav' />
+        <BsNavbar.Collapse id='responsive-navbar-nav' className='nav-menu-wrap'>
+          <Nav role='navigation' className='ml-auto'>
+            <Link to={ routeNames.presale } aria-current='page' className='custom-link-button custom-nav-link'>
+              Buy Tokens
             </Link>
-          )}
-        </Nav>
-      </BsNavbar.Collapse>
-      {/* </div> */}
+            <div style={{ width: '2rem' }}></div>
+            {isLoggedIn ? (
+              <NavItem onClick={handleLogout} className='custom-link-button custom-nav-auth-button'>
+                  Disconnect
+              </NavItem>
+            ) : (
+              <Link to={ routeNames.unlock } className='custom-link-button custom-nav-auth-button'>
+                  Connect
+              </Link>
+            )}
+          </Nav>
+        </BsNavbar.Collapse>
+      </Container>
     </BsNavbar>
   );
 };

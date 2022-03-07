@@ -1,112 +1,31 @@
-.link-block-8, .nav-link-2 {
-    text-decoration: none !important;
-    cursor: pointer !important;
+@import '../../../assets/sass/custom.scss';
+
+.custom-logo {
+    font-size: $font-title-size-1;
+    color: $color-white-1;
 }
 
-.text-block-96  {
-    padding: 5px 10px;
-    
-    border-style: solid;
-    border-width: 1px;
-    border-color: transparent;
-    &:hover, &:focus {
-        background-color: #00000022;
-
-        border-style: solid;
-        border-width: 1px;
-        border-color: rgba(51, 51, 51, 0.5);
-        border-radius: 5px;
-    }
-}
-
-.text-block-3.nav-logo-wrap {
-    cursor: pointer !important;
-}
-
-.button-4.tablet.black {
-    text-decoration: none !important;
-    background-color: #000000ff;
+.custom-nav-link {
+    color: $color-white-1;
 
     &:hover, &:focus {
-        background-color: #666;
+        color: $color-green-1;
     }
 }
 
-.epad-logo {
-    font-size: 2.4rem;
-    font-weight: bolder;
-}
-
-.epad-nav-link {
-    margin: .2rem 1rem;
-    padding: .5rem 1rem;
-    font-size: 1.2rem;
-    color: black;
-    text-decoration: none !important;
-
-    border-style: solid;
-    border-width: 1px;
-    border-color: transparent;
-    border-radius: 5px;
+.custom-nav-auth-button {
+    color: $color-black-1;
+    background-color: $color-green-1;
 
     &:hover, &:focus {
-
-        border-color: rgba(51, 51, 51, 0.5);
+        color: $color-black-1;
+        background-color: $color-green-2;
+        box-shadow: 0 0 16px #acd2f1;
     }
 }
 
-.epad-nav-auth-button {
-    margin: .2rem 1rem;
-    padding: .5rem 1rem;
-    font-size: 1rem;
-    line-height: 2rem;
-
-    color: white !important;
-    background-color: black;
-    text-decoration: none !important;
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    &:hover, &:focus {
-        background-color: #555;
-    }
-}
-
-.hero {
-    padding-left: 0rem !important;
-    padding-right: 0rem !important;
-}
-
-.navbar-brand {
-    margin-left: 2rem !important;
-}
-
-.navbar-toggler {
-    margin-right: 2rem !important;
-}
-
-.epad-nav-auth-button {
-    margin-right: 4rem !important;
-}
-
-// size md
-@media screen and (max-width: 768px) {
-    .epad-nav-link, .epad-nav-auth-button {
-        font-size: 1.2rem;
-        color: white !important;
-        background-color: transparent;
-        border: none !important;
-        border-radius: 0 !important;
-        
-        &:hover, &:focus {
-            background-color: #c3c3c366;
-            border: none !important;
-        }
-    }
-
-    .epad-nav-collapse {
-        background-color: #181818cc;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
+.custom-nav-link, .custom-nav-auth-button {
+    font-size: $font-button-size-1;
+    padding: .5rem 2rem;
+    border-radius: 50px;
 }

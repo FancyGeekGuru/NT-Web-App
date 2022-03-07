@@ -1,4 +1,4 @@
-export const dAppName = 'ePAD ICO Website';
+export const dAppName = 'Bitxfinance ICO Website';
 
 export const CONTRACT_ADDRESS = 'erd1qqqqqqqqqqqqqpgqmg5j9fflefcq9l8htv42hj67n4meszz06xwsltl9ms';
 export const CONTRACT_ABI_URL = '/abi/epad-ico.abi.json';

@@ -1,3 +1,35 @@
-@import url(https://fonts.googleapis.com/css2?family=Azeret+Mono&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
 
-$azeret: 'Azeret Mono', monospace;
+$main-font: 'Palanquin Dark', sans-serif;
+$number-font: 'Nunito', sans-serif;
+
+
+/// colors
+$color-white-1: #f0f0f0;
+$color-grey-1: #545454;
+$color-green-1: #00F69E;
+$color-green-2: #00ffa6;
+$color-blue-1: #1F58F2;
+$color-black-0: #101010;
+$color-black-1: #212529;
+$color-black-2: #40474e;
+
+/// font-size
+$font-title-size-1: 2.2rem;
+$font-button-size-1: 1.2rem;
+
+///////////////////////////////////////////////////////////////@at-root
+
+* {
+    font-family: $main-font;
+    color: $color-white-1;
+}
+
+.custom-link-button {
+    text-decoration: none !important;
+
+    &:hover, &:focus {
+        text-decoration: none !important;
+    }
+}
