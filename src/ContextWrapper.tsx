@@ -39,8 +39,7 @@ import { convertWeiToEgld } from './utils/convert';
 const {
   TransactionsToastList,
   SignTransactionsModals,
-  NotificationModal,
-  DappCorePages: { UnlockPage }
+  NotificationModal
 } = DappUI;
 
 export const ContractContext = React.createContext<any>(undefined);
