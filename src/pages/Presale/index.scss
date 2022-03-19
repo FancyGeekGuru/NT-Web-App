@@ -21,14 +21,23 @@
 
     .custom-presale-header {
         margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
     }
-    
-    .custom-presale-info {
-        color : $color-white-2;
+
+    .custom-presale-price {
+        color : $color-blue-1;
+        font-size: 1.3rem;
+        font-weight: lighter;
+        margin-bottom: 1.5rem;
+        font-family: $number-font;
+    }
+
+    .custom-presale-goal {
+        color : $color-blue-1;
         font-size: 1.3rem;
         font-weight: lighter;
         margin-bottom: 2rem;
+        font-family: $number-font;
     }
 }
 

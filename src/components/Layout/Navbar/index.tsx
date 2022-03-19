@@ -24,7 +24,7 @@ const Navbar = () => {
             className='d-flex align-items-center navbar-brand mr-0'
             to={routeNames.presale}
           >
-            <div className='custom-logo'>Bitxfinance</div>
+            <div className='custom-logo'>BitX Pre Sale</div>
           </Link>
         </BsNavbar.Brand>
         <BsNavbar.Toggle aria-controls='responsive-navbar-nav' />

@@ -105,7 +105,9 @@ const Presale = () => {
           <Col md={12} lg={6} className='custom-presale-col'>
             <div className='custom-presale-left'>
               <h1 className='custom-presale-header color-white'>Token Sale Is {saleStatus?.status == Status.NotStarted ? 'Coming' : (saleStatus?.status == Status.Started ? 'Live' : 'Ended')}!</h1>
-              <div className='custom-presale-info'>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div>
+              
+              <div className='custom-presale-price'>1 EGLD = 2000 BitX</div>
+              <div className='custom-presale-goal'>GOAL: 2 800 000 BitX</div>
 
               <div className='custom-timer-header'>Last Moment To Grab The Tokens</div>
               
