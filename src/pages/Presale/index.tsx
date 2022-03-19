@@ -22,6 +22,7 @@ import Time from './Time';
 import {
   ContractContext,
   SaleStatusContext,
+  AccountStateContext
 } from '../../ContextWrapper';
 import {
   Status,
@@ -49,6 +50,7 @@ const Presale = () => {
   const tokenSaleTargetRef = React.useRef(null);
 
   const saleStatus = React.useContext<ISaleStatusProvider | undefined>(SaleStatusContext);
+  const accountState = React.useContext<IAccountStateProvider | undefined>(AccountStateContext);
 
   const [buyAmountInEgld, setBuyAmountInEgld] = React.useState<number>(0);
   const [buyAmountInEsdt, setBuyAmountInEsdt] = React.useState<number>(0);
@@ -65,18 +67,21 @@ const Presale = () => {
 
   React.useEffect(() => {
     let disabled = true;
-    let stateInfo = '';
+    let stateInfo = 'You should login to buy tokens.';
     if (saleStatus && saleStatus.status == Status.Started) {
       if (account?.address){
-        if (MIN_BUY_LIMIT <= buyAmountInEgld && buyAmountInEgld <= MAX_BUY_LIMIT) {
-          disabled = false;
+        if (accountState) {
+          if (accountState.accountState == 2) {
+            if (MIN_BUY_LIMIT <= buyAmountInEgld && buyAmountInEgld <= MAX_BUY_LIMIT) {
+              disabled = false;
+            }
+            else {
+              stateInfo = 'You can only buy tokens between min and max amount.';  
+            }
+          } else if (accountState.accountState == 2) {
+            stateInfo = 'Only Whitelist members can buy tokens in the first stage.';  
+          }
         }
-        else {
-          stateInfo = 'You can only buy tokens between min and max amount.';  
-        }
-      }
-      else {
-        stateInfo = 'You should login to buy tokens.';
       }
     }
 
@@ -106,15 +111,15 @@ const Presale = () => {
             <div className='custom-presale-left'>
               <h1 className='custom-presale-header color-white'>Token Sale Is {saleStatus?.status == Status.NotStarted ? 'Coming' : (saleStatus?.status == Status.Started ? 'Live' : 'Ended')}!</h1>
               
-              <div className='custom-presale-price'>1 EGLD = 2000 BitX</div>
-              <div className='custom-presale-goal'>GOAL: 2 800 000 BitX</div>
+              <div className='custom-presale-price'>1 EGLD = { 1 / EXCHANGE_RATE } BitX</div>
+              <div className='custom-presale-goal'>GOAL: { saleStatus?.goal } BitX</div>
 
               <div className='custom-timer-header'>Last Moment To Grab The Tokens</div>
               
               <Time />
 
               <div className='custom-progress-container'>
-                <ProgressBar now={30} ref={tokenSaleTargetRef} />
+                <ProgressBar now={saleStatus && (saleStatus.totalBoughtAmountOfEsdt / saleStatus.goal)} ref={tokenSaleTargetRef} />
                 <div className='custome-progress-number color-white'>{saleStatus?.totalBoughtAmountOfEsdt} / {saleStatus?.goal} BITX</div>
               </div>
             </div>
@@ -134,14 +139,14 @@ const Presale = () => {
                   <div className='custom-buy-card-amount-header'>AMOUNT TO GET</div>
                   <div className='custom-buy-card-amount-container'>
                     <input className='custom-buy-card-amount-input' type='number' disabled={true} value={buyAmountInEsdt} />
-                    <span className='custom-buy-card-amount-unit color-white'>SVEN</span>
+                    <span className='custom-buy-card-amount-unit color-white'>BITX</span>
                   </div>
                 </div>
                 <div className='custom-buy-card-info color-white'>Minimum Buy Amount:&nbsp;&nbsp;<b>{MIN_BUY_LIMIT} EGLD</b></div>
                 <div className='custom-buy-card-info color-white'>Maximum Buy Amount:&nbsp;&nbsp;<b>{MAX_BUY_LIMIT} EGLD</b></div>
               </div>
               <div className='custom-buy-card-footer'>
-                <button className='custom-buy-card-buy-button' onClick={buyToken} disabled={buyButtonDisabled}>Buy SVEN</button>
+                <button className='custom-buy-card-buy-button' onClick={buyToken} disabled={buyButtonDisabled}>Buy BITX</button>
                 <div className='custom-buy-card-buy-state-info'>{buyStateInfo}</div>
               </div>
             </div>

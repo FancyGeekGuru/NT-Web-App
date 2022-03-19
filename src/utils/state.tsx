@@ -22,10 +22,5 @@ export interface ISaleStatusProvider {
 }
 
 export interface IAccountStateProvider {
-    boughtAmount: number;
-    lockedAmount: number;
-    claimableAmount: number;
-    claimedReleaseCount: number;
-    claimableReleaseCount: number;
-    isInWhitelist: boolean;
+    accountState: number;
 }
