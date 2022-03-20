@@ -1,6 +1,7 @@
 import { dAppName } from 'config';
 import withPageTitle from './components/PageTitle';
 import Presale from './pages/Presale';
+import UnlockPage from './pages/UnlockPage';
 
 export const routeNames = {
   unlock: '/unlock',
@@ -14,7 +15,12 @@ const routes: Array<any> = [
     path: routeNames.presale,
     title: 'Presale',
     component: Presale
-  }
+  },
+  {
+    path: routeNames.unlock,
+    title: 'Unlock',
+    component: UnlockPage
+  },
 ];
 
 const mappedRoutes = routes.map((route) => {
