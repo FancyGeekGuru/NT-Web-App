@@ -22,22 +22,25 @@
     .custom-presale-header {
         margin-top: 2rem;
         margin-bottom: 3rem;
+        text-align: center;
     }
 
     .custom-presale-price {
-        color : $color-blue-1;
-        font-size: 1.3rem;
+        color : $color-green-1;
+        font-size: 1.6rem;
         font-weight: lighter;
-        margin-bottom: 1.5rem;
+        margin-top: 3rem;
         font-family: $number-font;
+        text-align: center;
     }
 
     .custom-presale-goal {
-        color : $color-blue-1;
+        color : $color-green-1;
         font-size: 1.3rem;
         font-weight: lighter;
         margin-bottom: 2rem;
         font-family: $number-font;
+        text-align: center;
     }
 }
 
@@ -110,6 +113,7 @@
     }
 
     .custom-buy-card-info {
+        text-align: center;
         b {
             font-family: $number-font;
         }

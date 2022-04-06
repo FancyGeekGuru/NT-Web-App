@@ -1,6 +1,7 @@
 export const dAppName = 'Bitxfinance ICO Website';
+export const ENVIRONMENT = 'mainnet';
 
-export const CONTRACT_ADDRESS = 'erd1qqqqqqqqqqqqqpgqcmevgfmp7uvkt6nyynzg67adzhtldnuf4dfq9qtak2';
+export const CONTRACT_ADDRESS = 'erd1qqqqqqqqqqqqqpgqguy27dwjmghs90vwanm0y054s5yaf0u03qmqasfjjy';
 export const CONTRACT_ABI_URL = '/abi/bitxfinance-ico.abi.json';
 export const CONTRACT_NAME = 'BitxfinanceIco';
 

@@ -15,9 +15,9 @@ import {
   SmartContractAbi,
   SmartContract,
   Interaction,
-  QueryResponseBundle,
   ProxyProvider,
   Account,
+  DefaultSmartContractController,
 } from '@elrondnetwork/erdjs';
 import {
   refreshAccount,
@@ -28,7 +28,6 @@ import {
 } from '@elrondnetwork/dapp-core';
 
 import { CONTRACT_ADDRESS, CONTRACT_ABI_URL, CONTRACT_NAME } from './config';
-import { sendQuery } from './utils/transaction';
 import {
     convertToStatus,
     ISaleStatusProvider,
@@ -36,6 +35,7 @@ import {
 } from './utils/state';
 import { SECOND_IN_MILLI, TIMEOUT } from './utils/const';
 import { convertWeiToEgld } from './utils/convert';
+import { IContractInteractor } from './utils/state';
 
 
 const {
@@ -52,20 +52,37 @@ const ContextWrapper = () => {
   const { network } = useGetNetworkConfig();
   const { hasPendingTransactions } = useGetPendingTransactions();
   const { account } = useGetAccountInfo();
-  const proxy = new ProxyProvider(network.apiAddress, { timeout: TIMEOUT });
+  const proxyProvider = new ProxyProvider(network.apiAddress, { timeout: TIMEOUT });
 
   // load smart contract abi and parse it to SmartContract object for tx
-  const [contract, setContract] = React.useState<any>(undefined);
+  // const [contract, setContract] = React.useState<any>(undefined);
+  const [contractInteractor, setContractInteractor] = React.useState<IContractInteractor | undefined>();
   React.useEffect(() => {
     (async() => {
-      const abiRegistry = await AbiRegistry.load({
-        urls: [CONTRACT_ABI_URL],
+      // const abiRegistry = await AbiRegistry.load({
+      //   urls: [CONTRACT_ABI_URL],
+      // });
+      // const con = new SmartContract({
+      //   address: new Address(CONTRACT_ADDRESS),
+      //   abi: new SmartContractAbi(abiRegistry, [CONTRACT_NAME]),
+      // });
+      // setContract(con);
+
+      const registry = await AbiRegistry.load({ urls: [CONTRACT_ABI_URL] });
+      const abi = new SmartContractAbi(registry, [CONTRACT_NAME]);
+      const contract = new SmartContract({ address: new Address(CONTRACT_ADDRESS), abi: abi });
+      const controller = new DefaultSmartContractController(abi, proxyProvider);
+
+      console.log('contractInteractor', {
+          contract,
+          controller,
       });
-      const con = new SmartContract({
-        address: new Address(CONTRACT_ADDRESS),
-        abi: new SmartContractAbi(abiRegistry, [CONTRACT_NAME]),
+
+      setContractInteractor({
+          contract,
+          controller,
       });
-      setContract(con);
+
     })();
   }, []); // [] makes useEffect run once
 
@@ -73,12 +90,17 @@ const ContextWrapper = () => {
   const [accountState, setAccountState] = React.useState<IAccountStateProvider | undefined>();
   React.useEffect(() => {
     (async () => {
-      if (!contract) return;
+      // if (!contract) return;
 
-      const interaction: Interaction = contract.methods.getStatus();
-      const res: QueryResponseBundle | undefined = await sendQuery(contract, proxy, interaction);
+      // const interaction: Interaction = contract.methods.getStatus();
+      // const res: QueryResponseBundle | undefined = await sendQuery(contract, proxy, interaction);
+
+      if (!contractInteractor) return;
+      const interaction = contractInteractor.contract.methods.getStatus();
+      const res = await contractInteractor.controller.query(interaction);
+
       if (!res || !res.returnCode.isSuccess()) return;
-      const value = res.firstValue.valueOf();
+      const value = res.firstValue?.valueOf();
 
       const status = convertToStatus(value.field0.valueOf().name);
       const leftTimestamp = value.field1.toNumber() * SECOND_IN_MILLI;
@@ -89,26 +111,31 @@ const ContextWrapper = () => {
 
       
     })();
-  }, [contract, hasPendingTransactions]);
+  }, [contractInteractor, hasPendingTransactions]);
 
   React.useEffect(() => {
     (async () => {
       // acount state
-      if (!contract || !account.address) return;
+      if (!contractInteractor || !account.address) return;
 
+      // const args = [new AddressValue(new Address(account.address))];
+      // const interaction: Interaction = contract.methods.getAccountState(args);
+      // const res: QueryResponseBundle | undefined = await sendQuery(contract, proxy, interaction);
+      
       const args = [new AddressValue(new Address(account.address))];
-      const interaction: Interaction = contract.methods.getAccountState(args);
-      const res: QueryResponseBundle | undefined = await sendQuery(contract, proxy, interaction);
+      const interaction = contractInteractor.contract.methods.getAccountState(args);
+      const res = await contractInteractor.controller.query(interaction);
+
       if (!res || !res.returnCode.isSuccess()) return;
 
-      const accountState = res.firstValue.valueOf().toNumber();
+      const accountState = res.firstValue?.valueOf().toNumber();
       setAccountState({accountState});
     })();
-  }, [contract, account.address]);
+  }, [contractInteractor, account.address]);
   console.log('>>>accountState', accountState);
 
   return (
-    <ContractContext.Provider value={contract}>
+    <ContractContext.Provider value={contractInteractor?.contract}>
       <SaleStatusContext.Provider value={saleStatus}>
         <AccountStateContext.Provider value={accountState}>
           <Layout>

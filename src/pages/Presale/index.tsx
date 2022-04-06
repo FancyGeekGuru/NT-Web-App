@@ -83,6 +83,8 @@ const Presale = () => {
           }
         }
       }
+    } else {
+      stateInfo = '';
     }
 
     setBuyButtonDisabled(disabled);
@@ -110,11 +112,10 @@ const Presale = () => {
           <Col md={12} lg={6} className='custom-presale-col'>
             <div className='custom-presale-left'>
               <h1 className='custom-presale-header color-white'>Token Sale Is {saleStatus?.status == Status.NotStarted ? 'Coming' : (saleStatus?.status == Status.Started ? 'Live' : 'Ended')}!</h1>
-              
-              <div className='custom-presale-price'>1 EGLD = { 1 / EXCHANGE_RATE } BitX</div>
-              <div className='custom-presale-goal'>GOAL: { saleStatus?.goal } BitX</div>
 
-              <div className='custom-timer-header'>Last Moment To Grab The Tokens</div>
+              {
+                saleStatus?.status == Status.Started && (<div className='custom-timer-header'>Last Moment To Grab The Tokens</div>)
+              }
               
               <Time />
 
@@ -122,6 +123,10 @@ const Presale = () => {
                 <ProgressBar now={saleStatus && (saleStatus.totalBoughtAmountOfEsdt / saleStatus.goal)} ref={tokenSaleTargetRef} />
                 <div className='custome-progress-number color-white'>{saleStatus?.totalBoughtAmountOfEsdt} / {saleStatus?.goal} BITX</div>
               </div>
+
+              <div className='custom-presale-price'>1 EGLD = { 1 / EXCHANGE_RATE } BitX</div>
+              {/* <div className='custom-presale-goal'>GOAL: { saleStatus?.goal } BitX</div> */}
+
             </div>
           </Col>
           <Col md={12} lg={6} className='custom-presale-col'>

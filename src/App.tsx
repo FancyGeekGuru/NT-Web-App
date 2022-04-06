@@ -7,8 +7,7 @@ import { routeNames } from 'routes';
 import routes from 'routes';
 import '@elrondnetwork/dapp-core/build/index.css';
 import ContextWrapper from './ContextWrapper';
-
-const environment = 'devnet';
+import { ENVIRONMENT } from './config';
 
 const {
   TransactionsToastList,
@@ -21,7 +20,7 @@ const App = () => {
   return (
     <Router>
       <DappProvider
-        environment={environment}
+        environment={ENVIRONMENT}
         customNetworkConfig={{ name: 'customConfig', apiTimeout: 6000 }}
         completedTransactionsDelay={200}
       >
