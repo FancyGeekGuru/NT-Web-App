@@ -145,7 +145,7 @@ const ContextWrapper = () => {
               <Routes>
                   <Route
                   path={routeNames.unlock}
-                  element={<UnlockRoute loginRoute={routeNames.presale} />}
+                  element={<UnlockRoute loginRoute={routeNames.dashboard} />}
                   />
                   {routes.map((route: any, index: number) => (
                       <Route

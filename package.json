@@ -1,8 +1,8 @@
 {
-  "name": "bitxfinance",
-  "description": "BitxFinance ICO Website",
+  "name": "NT Web App",
+  "description": "NT Web App",
   "version": "0.2.0",
-  "author": "Ice <icegriffin1122@gmail.com>",
+  "author": "Fancy <fancydev0225@gmail.com>",
   "license": "GPL-3.0-or-later",
   "repository": "@elrondnetwork/dapp-template",
   "dependencies": {
@@ -80,5 +80,10 @@
     "node-sass": "6.0.1",
     "prettier": "2.3.2",
     "react-error-overlay": "6.0.9"
+  },
+  "resolutions": {
+    "react-error-overlay": "6.0.9",
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2"
   }
 }

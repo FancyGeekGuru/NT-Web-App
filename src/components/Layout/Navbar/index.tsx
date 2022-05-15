@@ -2,10 +2,9 @@ import React from 'react';
 import { logout, useGetAccountInfo } from '@elrondnetwork/dapp-core';
 import { Navbar as BsNavbar, NavItem, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { dAppName } from 'config';
 import { routeNames } from 'routes';
-import { ReactComponent as ElrondLogo } from './../../../assets/img/elrond.svg';
 import './index.scss';
+import WalletPng from 'assets/img/Wallet.png';
 
 const Navbar = () => {
   const { address } = useGetAccountInfo();
@@ -19,28 +18,34 @@ const Navbar = () => {
   return (
     <BsNavbar collapseOnSelect className='' expand='md' variant='dark'>
       <Container>
-        <BsNavbar.Brand>
-          <Link
-            className='d-flex align-items-center navbar-brand mr-0'
-            to={routeNames.presale}
-          >
-            <div className='custom-logo'>BitX Pre Sale</div>
-          </Link>
-        </BsNavbar.Brand>
+        <div></div>
         <BsNavbar.Toggle aria-controls='responsive-navbar-nav' />
         <BsNavbar.Collapse id='responsive-navbar-nav' className='nav-menu-wrap'>
           <Nav role='navigation' className='ml-auto'>
-            <Link to={ routeNames.presale } aria-current='page' className='custom-link-button custom-nav-link'>
-              Buy Tokens
+            <Link to={routeNames.dashboard} aria-current='page' className='custom-link-button custom-nav-link'>
+              DASHBOARD
             </Link>
-            <div style={{ width: '2rem' }}></div>
+            <div style={{ width: '1rem' }}/>
+            <Link to={routeNames.mypage} aria-current='page' className='custom-link-button custom-nav-link'>
+              MY PAGE
+            </Link>
+            <div style={{ width: '1rem' }}/>
+            <Link to={routeNames.earn} aria-current='page' className='custom-link-button custom-nav-link'>
+              EARN
+            </Link>
+            <div style={{ width: '1rem' }}/>
+            <Link to={routeNames.utility} aria-current='page' className='custom-link-button custom-nav-link'>
+              UTILITY+
+            </Link>
+            <div style={{ width: '1rem' }}/>
             {isLoggedIn ? (
               <NavItem onClick={handleLogout} className='custom-link-button custom-nav-auth-button'>
-                  Disconnect
+                Disconnect Wallet
               </NavItem>
             ) : (
-              <Link to={ routeNames.unlock } className='custom-link-button custom-nav-auth-button'>
-                  Connect
+              <Link to={routeNames.unlock} className='custom-link-button custom-nav-auth-button'>
+                <img src={WalletPng} style={{ paddingRight: '.6rem' }} />
+                <span>Connect Wallet</span>
               </Link>
             )}
           </Nav>

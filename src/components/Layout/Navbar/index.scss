@@ -6,43 +6,60 @@
 }
 
 .custom-nav-link {
-    color: $color-white-1;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    margin-top: 1rem;
+    margin-bottom: .4rem;
+    padding: .5rem 1rem;
+
+    font-family: 'Segoe UI';
+    font-size: 15px;
+    font-weight: 700;
+    color: white !important;
 
     &:hover, &:focus {
-        color: $color-green-1;
+        background: #212121;
+        border-radius: 10px;
     }
 }
 
 .custom-nav-auth-button {
-    color: $color-black-1;
-    background-color: $color-green-1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    padding: .5rem 2rem;
+    margin-top: 1rem;
+    margin-bottom: .4rem;
+
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    color: rgba(249, 216, 94, 1) !important;
+
+    border: 2px solid rgba(249, 216, 94, 1);
+    border-radius: 25px;
+    
+    transition: .2s ease-in-out;
 
     &:hover, &:focus {
-        color: $color-black-1;
-        background-color: $color-green-2;
-        box-shadow: 0 0 16px #acd2f1;
+        box-shadow: 0 0 12px #acd2f1;
     }
 }
 
-.custom-nav-link, .custom-nav-auth-button {
-    font-size: $font-button-size-1;
-    padding: .5rem 2rem;
-    border-radius: 50px;
-    margin-top: .4rem;
-    margin-bottom: .4rem;
-    cursor: pointer;
-
-    // transition: all 0.1s ease;
+.navbar-toggler {
+    margin-top: 1rem;
+    color: $color-white-1 !important;
 }
 
-.navbar-toggler {
-    color: $color-white-1 !important;
+.navbar-nav {
+    align-items: center;
 }
 
 @media screen and (max-width: 768px) {
     #responsive-navbar-nav {
-        padding: 1rem 2rem !important;
-        background-color: #ffffff33;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: .5rem !important;
     }
 }

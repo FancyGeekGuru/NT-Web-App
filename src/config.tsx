@@ -1,4 +1,4 @@
-export const dAppName = 'Bitxfinance ICO Website';
+export const dAppName = 'NT Web App';
 export const ENVIRONMENT = 'mainnet';
 
 export const CONTRACT_ADDRESS = 'erd1qqqqqqqqqqqqqpgqguy27dwjmghs90vwanm0y054s5yaf0u03qmqasfjjy';

@@ -13,7 +13,7 @@ const Footer = () => {
           className='custom-footer-link d-flex align-items-center'
           href='https://elrond.com/'
         >
-          Made with <HeartIcon className='mx-1' /> by BitX Team.
+          Made with <HeartIcon className='mx-1' /> by Azuki Members Team
         </a>
       </div>
     </footer>
