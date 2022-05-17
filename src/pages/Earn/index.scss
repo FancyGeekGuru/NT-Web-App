@@ -1,0 +1,49 @@
+.title {
+    font-family: SF Pro Text;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 48px;
+    letter-spacing: -0.06em;
+    text-align: left;
+}
+
+.total-balance-container {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #212121;
+    border-radius: 25px;
+    border: 1px solid #212121;
+    height: 288px;
+    width: 1220px;
+}
+
+.total-balance-text {
+    padding-left: 50px;
+    padding-top: 60px;
+}
+
+.total-balance-buttongroup {
+    right: 50px;
+    width: 424px;
+    height: 45px;
+    float: right;
+}
+
+.deposit-button {
+    margin-right: 12px !important;
+    border: 1px solid #493C3C !important;
+    border-radius: 25px !important;
+    background-color: #493C3C !important;
+    color: #ffffff !important;
+    width: 200px;
+}
+
+.withdraw-button {
+    margin-left: 12px !important;
+    border: 1px solid #CEBFBF !important;
+    border-radius: 25px !important;
+    background-color: #212121 !important;
+    color: #CEBFBF !important;  
+    width: 200px;
+}
+

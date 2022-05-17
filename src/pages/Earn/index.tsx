@@ -1,12 +1,20 @@
 import * as React from 'react';
-
-import { Container } from 'react-bootstrap';
+import { Container, ButtonGroup, Button} from 'react-bootstrap';
+import './index.scss';
 const Earn = () => {
     return (
         <>
             <Container>
-                <p> EARN </p>
+                <p className="title">EARN</p>
             </Container>
+            <div className="total-balance-container">
+                <p className="total-balance-text">TOTAL BALANCE<br />532.875USD</p>
+                <ButtonGroup className="total-balance-buttongroup">
+                    <Button className="deposit-button">Deposit</Button>
+                    <Button className="withdraw-button"> Withdraw</Button>
+                </ButtonGroup>
+            </div>
+
         </>
     );
 };
