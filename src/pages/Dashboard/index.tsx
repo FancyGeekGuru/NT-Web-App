@@ -1,12 +1,58 @@
 import React, { useState } from 'react';
+import Slider, { SliderThumb } from '@mui/material/Slider';
+import { styled } from '@mui/material/styles';
 import Chart from 'react-apexcharts';
 import { Container, Row, Col, Dropdown } from 'react-bootstrap';
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
-import RadialChart from './RadialChart.js';
-
+import externalLink from 'assets/img/External_Link.svg';
 import { coins } from './data';
-
+import RadialChart from './RadialChart.js';
 import './index.scss';
+
+const AirbnbSlider = styled(Slider)(({ theme }) => ({
+    color: '#F9D85E',
+    height: 3,
+    padding: '13px 0',
+    '& .MuiSlider-thumb': {
+        height: 27,
+        width: 27,
+        backgroundColor: '#F9D85E',
+        border: '1px solid currentColor',
+        boxShadow: 'none',
+        '&:hover': {
+            boxShadow: '0 0 0 8px rgba(249, 216, 94, 0.16)',
+        },
+        '& .airbnb-bar': {
+            height: 9,
+            width: 1,
+            backgroundColor: 'currentColor',
+            marginLeft: 1,
+            marginRight: 1,
+        },
+    },
+    '& .MuiSlider-track': {
+        height: 6,
+    },
+    '& .MuiSlider-rail': {
+        color: theme.palette.mode === 'dark' ? '#bfbfbf' : '#d8d8d8',
+        // opacity: theme.palette.mode === 'dark' ? undefined : 1,
+        opacity: 0.2,
+        height: 6,
+    },
+}));
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface AirbnbThumbComponentProps extends React.HTMLAttributes<unknown> { }
+
+function AirbnbThumbComponent(props: AirbnbThumbComponentProps) {
+    const { children, ...other } = props;
+    return (
+        <SliderThumb {...other}>
+            {children}
+            <span style={{ fontSize: '20px', color: '#493C3C', fontFamily: 'monospace', letterSpacing: '-0.05rem' }}>{'<>'}</span>
+        </SliderThumb>
+    );
+}
 
 const Dashboard = () => {
     const series = [
@@ -66,12 +112,19 @@ const Dashboard = () => {
             width: 1,
         },
     };
+
     return (
         <>
             <Container className='mb-5'>
-                <p className="page-title"> DASHBOARD </p>
+                <div className='d-flex align-items-baseline'>
+                    <p className="page-title"> DASHBOARD </p>
+                    <div style={{ cursor: 'pointer' }}>
+                        <span className='ml-3' style={{ fontFamily: 'SF Pro Text Bold', color: '#CEC0C0' }}>Docs</span>
+                        <img className='ml-1' src={externalLink} />
+                    </div>
+                </div>
 
-                <div className="NT-Card mt-5">
+                <div className="NT-Card mt-4">
                     <Row className='d-flex align-items-center'>
                         <Col className="borderRight" md="4">
                             <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL VALUE LOCKED</p>
@@ -177,8 +230,17 @@ const Dashboard = () => {
                             </div>
 
                             <div className='d-flex flex-column mt-2'>
-                                <input className='amount-input'/>
+                                <input className='amount-input' />
                                 <span style={{ fontFamily: 'SF Pro Text', fontSize: '11px', color: '#CEC0C0' }}>Amount in USD</span>
+                            </div>
+
+                            <div className='mt-5'>
+                                <span style={{ fontFamily: 'SF Pro Text Heavy', fontSize: '22px' }}>10 Years</span>
+                                <AirbnbSlider
+                                    components={{ Thumb: AirbnbThumbComponent }}
+                                    getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
+                                    defaultValue={60}
+                                />
                             </div>
                         </Col>
 

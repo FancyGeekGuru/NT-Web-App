@@ -9,6 +9,8 @@
     "@elrondnetwork/dapp-core": "1.0.45",
     "@elrondnetwork/erdjs": "10.0.0-beta.3",
     "@elrondnetwork/erdjs-walletcore": "^1.0.0",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.8.0",
     "@types/react-vis": "^1.11.11",
     "apexcharts": "^3.35.2",
