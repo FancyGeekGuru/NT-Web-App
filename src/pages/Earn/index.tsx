@@ -6,7 +6,7 @@ const Earn = () => {
         <>
             <Container>
                 <p className="page-title"> EARN </p>
-                <div className="NT-Card mt-5 total-balance-container">
+                <div className="total-balance-container mt-5">
                     <p className="mb-0" style={{ fontSize: '18px', letterSpacing: '-0.06rem' }}>TOTAL BALANCE</p>
                     <p style={{ fontSize: '30px', fontWeight: '500' }}>532.875 <span style={{ fontSize: '16px' }}>USD</span></p>
                     <ButtonGroup className="total-balance-buttongroup">
