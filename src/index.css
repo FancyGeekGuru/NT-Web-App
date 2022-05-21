@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: SF Pro Text, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -11,4 +11,19 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: local('SF Pro Text'), url(./assets/fonts/FontsFree-Net-SFProText-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'SF Pro Text Bold';
+  src: local('SF Pro Text Bold'), url(./assets/fonts/FontsFree-Net-SFProText-Bold-1.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'SF Pro Text Heavy';
+  src: local('SF Pro Text Heavy'), url(./assets/fonts/FontsFree-Net-SFProText-Heavy-1.ttf) format('truetype');
 }
