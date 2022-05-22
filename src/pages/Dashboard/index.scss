@@ -140,10 +140,10 @@
     color: white;
     padding: 5px;
     width: 100px;
-    transition: .1s ease-in-out;
+    transition: .3s ease-in-out;
 
     &:hover {
-        transform: scale(1.1);
+        background: #493c3c93;
     }
 }
 
@@ -163,10 +163,11 @@
         margin-top: 10px;
     }
 
-    transition: .1s ease-in-out;
+    transition: .3s all ease-in-out;
 
     &:hover {
-        transform: scale(1.1);
+        background: #493C3C;
+        color: white;
     }
 }
 
