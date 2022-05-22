@@ -23,9 +23,18 @@ class RadialChart extends Component {
             color
         } = this.props;
 
+        const tempRadius = 16;
         const circleRadius = Math.min(radius, 85);
         const circumference = 2 * 3.14 * circleRadius;
-        const strokeLength = setStrokeLength ? circumference / 100 * progress : 0;
+        const strokeLength = setStrokeLength ? circumference / 100 * progress[0] : 0;
+
+        const circleRadius1 = circleRadius - tempRadius;
+        const circumference1 = 2 * 3.14 * circleRadius1;
+        const strokeLength1 = setStrokeLength ? circumference1 / 100 * progress[1] : 0;
+
+        const circleRadius2 = circleRadius - 2 * tempRadius;
+        const circumference2 = 2 * 3.14 * circleRadius2;
+        const strokeLength2 = setStrokeLength ? circumference2 / 100 * progress[2] : 0;
 
         return (
             <div
@@ -35,8 +44,8 @@ class RadialChart extends Component {
             >
                 <svg viewBox="0 0 180 180" width={dimension} height={dimension}>
                     <circle
-                        className="radial-chart-total"
-                        stroke={color}
+                        className="multiRadial-chart-total"
+                        stroke={color[0]}
                         strokeWidth={strokeWidth}
                         fill="none"
                         cx="90"
@@ -44,8 +53,8 @@ class RadialChart extends Component {
                         r={circleRadius}
                     />
                     <circle
-                        className="radial-chart-progress"
-                        stroke={color}
+                        className="multiRadial-chart-progress"
+                        stroke={color[0]}
                         strokeWidth={strokeWidth}
                         strokeDasharray={`${strokeLength},${circumference}`}
                         strokeLinecap="round"
@@ -56,8 +65,8 @@ class RadialChart extends Component {
                     />
 
                     <circle
-                        className="radial-chart-total"
-                        stroke={color}
+                        className="multiRadial-chart-total"
+                        stroke={color[1]}
                         strokeWidth={strokeWidth}
                         fill="none"
                         cx="90"
@@ -65,10 +74,10 @@ class RadialChart extends Component {
                         r={circleRadius - 18}
                     />
                     <circle
-                        className="radial-chart-progress"
-                        stroke={color}
+                        className="multiRadial-chart-progress"
+                        stroke={color[1]}
                         strokeWidth={strokeWidth}
-                        strokeDasharray={`${strokeLength},${circumference}`}
+                        strokeDasharray={`${strokeLength1},${circumference1}`}
                         strokeLinecap="round"
                         fill="none"
                         cx="90"
@@ -77,8 +86,8 @@ class RadialChart extends Component {
                     />
 
                     <circle
-                        className="radial-chart-total"
-                        stroke={color}
+                        className="multiRadial-chart-total"
+                        stroke={color[2]}
                         strokeWidth={strokeWidth}
                         fill="none"
                         cx="90"
@@ -86,10 +95,10 @@ class RadialChart extends Component {
                         r={circleRadius - 36}
                     />
                     <circle
-                        className="radial-chart-progress"
-                        stroke={color}
+                        className="multiRadial-chart-progress"
+                        stroke={color[2]}
                         strokeWidth={strokeWidth}
-                        strokeDasharray={`${strokeLength},${circumference}`}
+                        strokeDasharray={`${strokeLength2},${circumference2}`}
                         strokeLinecap="round"
                         fill="none"
                         cx="90"

@@ -1,20 +1,68 @@
-.radial-chart {
+.multiRadial-chart {
     position: relative;
     display: inline-block;
     transition: all 0.3s ease-in;
 }
 
-.radial-chart.no-progress .radial-chart-progress {
+.multiRadial-chart.no-progress .radial-chart-progress {
     opacity: 0;
 }
 
-.radial-chart-total {
-    stroke: black;
+.multiRadial-chart-total {
+    stroke: #493C3C;
 }
 
-.radial-chart-progress {
-    transform: rotate(270deg);
+.multiRadial-chart-progress {
+    transform: rotate(180deg);
     transform-origin: center;
     transition: all 0.6s cubic-bezier(0.58, 0.16, 0.5, 1.14);
     transition-delay: 0.3s;
+}
+
+.my-page-deposit-but {
+    background: #493C3C;
+    border: none;
+    border-radius: 30px;
+    font-family: 'SF Pro Text';
+    font-Size: 12px;
+    color: white;
+    padding: 8px;
+    width: 180px;
+    transition: .3s all ease-in-out;
+    &:hover {
+        background: #493c3c93;
+    }
+}
+
+.my-page-withdraw-but {
+    background: transparent;
+    border: 1px solid #CEBFBF;
+    border-radius: 30px;
+    font-family: 'SF Pro Text';
+    font-Size: 12px;
+    color: #CEBFBF;
+    padding: 8px;
+    width: 180px;
+    margin-left: 19px;
+    transition: .3s all ease-in-out;
+    &:hover {
+        background: #493C3C;
+        color: white;
+    }
+}
+
+.save-more-but {
+    background: #493C3C;
+    border: none;
+    border-radius: 30px;
+    font-family: 'SF Pro Text';
+    font-Size: 12px;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    transition: .3s all ease-in-out;
+
+    &:hover {
+        background: #493c3c93;
+    } 
 }

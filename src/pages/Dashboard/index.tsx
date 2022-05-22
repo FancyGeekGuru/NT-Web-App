@@ -5,7 +5,7 @@ import Chart from 'react-apexcharts';
 import { Container, Row, Col, Dropdown } from 'react-bootstrap';
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import externalLink from 'assets/img/External_Link.svg';
-import { coins } from './data';
+import { coins } from '../data';
 import RadialChart from './RadialChart.js';
 import './index.scss';
 
