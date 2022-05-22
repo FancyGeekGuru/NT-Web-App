@@ -11,7 +11,7 @@ const Footer = () => {
             target: '_blank'
           }}
           className='custom-footer-link d-flex align-items-center'
-          href='https://elrond.com/'
+          href='https://github.com/tomio111'
         >
           Made with <HeartIcon className='mx-1' /> by Tomio
         </a>
