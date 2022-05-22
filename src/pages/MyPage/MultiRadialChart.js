@@ -54,6 +54,48 @@ class RadialChart extends Component {
                         cy="90"
                         r={circleRadius}
                     />
+
+                    <circle
+                        className="radial-chart-total"
+                        stroke={color}
+                        strokeWidth={strokeWidth}
+                        fill="none"
+                        cx="90"
+                        cy="90"
+                        r={circleRadius - 18}
+                    />
+                    <circle
+                        className="radial-chart-progress"
+                        stroke={color}
+                        strokeWidth={strokeWidth}
+                        strokeDasharray={`${strokeLength},${circumference}`}
+                        strokeLinecap="round"
+                        fill="none"
+                        cx="90"
+                        cy="90"
+                        r={circleRadius - 18}
+                    />
+
+                    <circle
+                        className="radial-chart-total"
+                        stroke={color}
+                        strokeWidth={strokeWidth}
+                        fill="none"
+                        cx="90"
+                        cy="90"
+                        r={circleRadius - 36}
+                    />
+                    <circle
+                        className="radial-chart-progress"
+                        stroke={color}
+                        strokeWidth={strokeWidth}
+                        strokeDasharray={`${strokeLength},${circumference}`}
+                        strokeLinecap="round"
+                        fill="none"
+                        cx="90"
+                        cy="90"
+                        r={circleRadius - 36}
+                    />
                 </svg>
             </div>
         );
@@ -62,8 +104,8 @@ class RadialChart extends Component {
 RadialChart.defaultProps = {
     radius: 80,
     progress: 100,
-    strokeWidth: 10,
-    dimension: 180,
+    strokeWidth: 6,
+    dimension: 300,
     color: DEFAULT_COLOR
 };
 RadialChart.propTypes = {

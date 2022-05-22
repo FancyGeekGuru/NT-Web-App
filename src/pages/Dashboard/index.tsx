@@ -132,7 +132,7 @@ const Dashboard = () => {
 
                             <Row className='mt-4 d-flex align-items-center justify-content-center'>
                                 <RadialChart
-                                    progress={75}
+                                    progress={65}
                                     color="#F9D85E"
                                     strokeWidth={22}
                                     radius={66}
