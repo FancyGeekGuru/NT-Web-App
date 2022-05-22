@@ -29,6 +29,7 @@
     padding: 8px;
     width: 180px;
     transition: .3s all ease-in-out;
+
     &:hover {
         background: #493c3c93;
     }
@@ -45,6 +46,7 @@
     width: 180px;
     margin-left: 19px;
     transition: .3s all ease-in-out;
+
     &:hover {
         background: #493C3C;
         color: white;
@@ -64,5 +66,37 @@
 
     &:hover {
         background: #493c3c93;
-    } 
+    }
+}
+
+.filter-pad {
+    background: #212121;
+    border-radius: 30px;
+}
+
+input[type="radio"] {
+    position: absolute;
+    visibility: hidden;
+}
+
+input[type="radio"]:checked+label {
+    color: white;
+    background: #493C3C;
+    border-radius: 30px;
+}
+
+.tab-but {
+    cursor: pointer;
+    padding: 13px;
+    width: 100%;
+    color: #CEBFBF;
+    background: transparent;
+    border: none;
+    transition: .3s all ease-in-out;
+
+    &:hover {
+        color: white;
+        background: #493c3c70;
+        border-radius: 30px;
+    }
 }

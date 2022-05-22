@@ -99,12 +99,34 @@ const MyPage = () => {
                     </Col>
                 </Row>
 
+                <div className='filter-pad mt-5 d-flex'>
+                    <input id='All-radio' type='radio' name='filterRadioGroup' value={0} defaultChecked />
+                    <label htmlFor='All-radio' style={{ width: '100%', textAlign: 'center', marginBottom: '0px' }}>
+                        <div className='tab-but'>
+                            ALL
+                        </div>
+                    </label>
 
-                <Row className='mt-5'>
+                    <input id='Stable-radio' type='radio' name='filterRadioGroup' value={1} />
+                    <label htmlFor='Stable-radio' style={{ width: '100%', textAlign: 'center', marginBottom: '0px' }}>
+                        <div className='tab-but'>
+                            STABLE
+                        </div>
+                    </label>
+
+                    <input id='Volatile-radio' type='radio' name='filterRadioGroup' value={2} />
+                    <label htmlFor='Volatile-radio' style={{ width: '100%', textAlign: 'center', marginBottom: '0px' }}>
+                        <div className='tab-but'>
+                            VOLATILE
+                        </div>
+                    </label>
+                </div>
+
+                <Row className='mt-3'>
                     {
                         coins.map((coin, index) => {
                             return (
-                                <Col sm='6' key={index} style={{marginTop:'30px'}}>
+                                <Col sm='6' key={index} style={{ marginTop: '30px' }}>
                                     <div className='NT-Card'>
                                         <div className='d-flex justify-content-between align-items-center'>
                                             <div className='d-flex align-items-center'>
