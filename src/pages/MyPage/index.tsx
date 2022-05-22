@@ -161,8 +161,99 @@ const MyPage = () => {
 
                 <p className='mt-5'> TRANSACTION HISTORY </p>
 
-                <div className='NT-Card'>
+                <div className='NT-Card' style={{ fontFamily: 'SF Pro Text' }}>
+                    <div className='d-flex justify-content-between align-items-center'>
+                        <div>
+                            <div>
+                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px', color: '#CEC0C0' }}>Earn</span>
+                            </div>
+                            <div>
+                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px' }}>Deposited</span>
+                                <span className='ml-1' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '12px' }}>25 USDT</span>
+                            </div>
+                        </div>
 
+                        <div>
+                            <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px', color: '#CEC0C0' }}>Tue, Jan 13, 2022, 11:02:19 PM</span>
+                        </div>
+                    </div>
+                    <hr style={{ border: '1px solid #434040' }} />
+
+                    <div className='d-flex justify-content-between align-items-center'>
+                        <div>
+                            <div>
+                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px', color: '#CEC0C0' }}>Transfer</span>
+                            </div>
+                            <div>
+                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px' }}>Received</span>
+                                <span className='ml-1' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '12px' }}>0.07162 wNEAR</span>
+                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px' }}> from</span>
+                                <span className='ml-1' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '12px' }}>F1sD...wy62h</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px', color: '#CEC0C0' }}>Tue, Jan 13, 2022, 11:01:19 PM</span>
+                        </div>
+                    </div>
+                    <hr style={{ border: '1px solid #434040' }} />
+
+                    <div className='d-flex justify-content-between align-items-center'>
+                        <div>
+                            <div>
+                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px', color: '#CEC0C0' }}>Transfer</span>
+                            </div>
+                            <div>
+                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px' }}>Sent</span>
+                                <span className='ml-1' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '12px' }}>0.07162 wNEAR</span>
+                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px' }}> from</span>
+                                <span className='ml-1' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '12px' }}>S1BA...wy62h</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px', color: '#CEC0C0' }}>Tue, Jan 13, 2022, 10:01:15 PM</span>
+                        </div>
+                    </div>
+                    <hr style={{ border: '1px solid #434040' }} />
+
+                    <div className='d-flex justify-content-between align-items-center'>
+                        <div>
+                            <div>
+                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px', color: '#CEC0C0' }}>Transfer</span>
+                            </div>
+                            <div>
+                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px' }}>Received</span>
+                                <span className='ml-1' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '12px' }}>0.07162 wNEAR</span>
+                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px' }}> from</span>
+                                <span className='ml-1' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '12px' }}>F1sD...wy62h</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px', color: '#CEC0C0' }}>Tue, Jan 13, 2022, 11:01:19 PM</span>
+                        </div>
+                    </div>
+                    <hr style={{ border: '1px solid #434040' }} />
+
+                    <div className='d-flex justify-content-between align-items-center'>
+                        <div>
+                            <div>
+                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px', color: '#CEC0C0' }}>Transfer</span>
+                            </div>
+                            <div>
+                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px' }}>Sent</span>
+                                <span className='ml-1' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '12px' }}>0.07162 wNEAR</span>
+                                <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px' }}> from</span>
+                                <span className='ml-1' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '12px' }}>S1BA...wy62h</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span style={{ fontFamily: 'SF Pro Text', fontSize: '12px', color: '#CEC0C0' }}>Tue, Jan 13, 2022, 10:01:15 PM</span>
+                        </div>
+                    </div>
+                    <hr style={{ border: '1px solid #434040' }} />
                 </div>
             </Container>
         </>
