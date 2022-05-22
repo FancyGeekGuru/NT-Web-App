@@ -158,6 +158,12 @@ const MyPage = () => {
                         })
                     }
                 </Row>
+
+                <p className='mt-5'> TRANSACTION HISTORY </p>
+
+                <div className='NT-Card'>
+
+                </div>
             </Container>
         </>
     );

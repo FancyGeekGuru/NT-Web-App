@@ -93,6 +93,8 @@ input[type="radio"]:checked+label {
     background: transparent;
     border: none;
     transition: .3s all ease-in-out;
+    font-family: 'SF Pro Text Bold';
+    font-size: 12px;
 
     &:hover {
         color: white;
