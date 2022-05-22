@@ -18,7 +18,7 @@ const Utility = () => {
                     <Row>
                         <Col sm="6">
                             <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>CURRENT NearT PRICE</p>
-                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy', paddingBottom:'20px'}}>0.25<span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
+                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy', paddingBottom:'20px'}}>0.25 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
                         </Col>
                         <Col sm="6">
                             <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>PROJECTED NearT PRICE</p>
@@ -31,7 +31,7 @@ const Utility = () => {
                     <Row>
                         <Col sm="6">
                             <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>YOUR FARMED NearT Tokens</p>
-                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy'}}>52,875.97<span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>NearT</span></p>
+                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy'}}>52,875.97 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>NearT</span></p>
                         </Col>
                         <Col sm="6">
                             <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>YOUR PROJECTED SHARE OF NearT Tokens</p>
@@ -39,15 +39,15 @@ const Utility = () => {
                         </Col>
                     </Row>
                 </div>
-                <div className="NT-Card mt-4">
+                <div className="NT-Card mt-4" >
                     <Row>
                         <Col sm="6">
                             <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>YOUR CURRENT ALLOCATION VALUE</p>
-                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy'}}>$10,355<span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
+                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy'}}>$10,355 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
                         </Col>
                         <Col sm="6">
                             <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>YOUR PROJECTED ALLOCATION VALUE</p>
-                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy'}}>$122,875<span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
+                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy'}}>$122,875 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
                         </Col>
                     </Row>
                 </div>
