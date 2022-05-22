@@ -1,0 +1,15 @@
+.deposit-free-but {
+    background: #493C3C;
+    border: none;
+    border-radius: 15px;
+    font-family: 'SF Pro Text';
+    font-Size: 12px;
+    color: white;
+    padding: 5px;
+    width: 250px;
+    transition: .1s ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}

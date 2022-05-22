@@ -1,68 +1,24 @@
 import * as React from 'react';
-import { Container, ButtonGroup, Button, Row, Col} from 'react-bootstrap';
-import './index.scss';
+import { Container} from 'react-bootstrap';
+import externalLink from 'assets/img/External_Link.svg';
 const Earn = () => {
     return (
         <>
             <Container>
-                <p className="page-title"> EARN </p>
-                <div className="total-balance-container mt-5">
-                    <p className="mb-0" style={{ fontSize: '18px', letterSpacing: '-0.06rem' }}>TOTAL BALANCE</p>
-                    <p style={{ fontSize: '30px', fontWeight: '500' }}>532.875 <span style={{ fontSize: '16px' }}>USD</span></p>
-                    <ButtonGroup className="total-balance-buttongroup">
-                        <Button className="deposit-button">Deposit</Button>
-                        <Button className="withdraw-button"> Withdraw</Button>
-                    </ButtonGroup>
+                <div className='d-flex align-items-baseline'>
+                    <p className="page-title"> EARN </p>
+                    <div style={{ cursor: 'pointer' }}>
+                        <span className='ml-3' style={{ fontFamily: 'SF Pro Text Bold', color: '#CEC0C0' }}>Docs</span>
+                        <img className='ml-1' src={externalLink} />
+                    </div>
                 </div>
-                <div>
-                    <Row>
-                        <Col sm = "6">
-                            <div className="deposit-card" style={{marginRight: '65px'}}>
-                                
-                            </div>
-                        </Col>
-                        <Col sm = "6">
-                            <div className="deposit-card" style={{marginLeft: '65px'}}>
-                                
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col sm = "6">
-                            <div className="deposit-card" style={{marginRight: '65px'}}>
-                                
-                            </div>
-                        </Col>
-                        <Col sm = "6">
-                            <div className="deposit-card" style={{marginLeft: '65px'}}>
-                                
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col sm = "6">
-                            <div className="deposit-card" style={{marginRight: '65px'}}>
-                                
-                            </div>
-                        </Col>
-                        <Col sm = "6">
-                            <div className="deposit-card" style={{marginLeft: '65px'}}>
-                                
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col sm = "6">
-                            <div className="deposit-card" style={{marginRight: '65px'}}>
-                                
-                            </div>
-                        </Col>
-                        <Col sm = "6">
-                            <div className="deposit-card" style={{marginLeft: '65px'}}>
-                                
-                            </div>
-                        </Col>
-                    </Row>
+                <div className="NT-Card mt-4">
+                    <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL BALANCE</p>
+                    <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy', paddingBottom:'50px'}}>532.875 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
+                    <div style={{float: 'right'}}>
+                        <button className='deposit-but'>Deposit</button>
+                        <button className='withdraw-but'>Withdraw</button>
+                    </div>
                 </div>
             </Container>
         </>
