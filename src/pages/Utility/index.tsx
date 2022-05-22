@@ -27,7 +27,7 @@ const Utility = () => {
                     </Row>
                     <button className='deposit-free-but'>DEPOSIT NOW & GET FREE NearT</button>               
                 </div>
-                <div className="NT-Card mt-4">
+                <div className="NT-Card mt-5">
                     <Row>
                         <Col sm="6">
                             <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>YOUR FARMED NearT Tokens</p>
@@ -39,7 +39,7 @@ const Utility = () => {
                         </Col>
                     </Row>
                 </div>
-                <div className="NT-Card mt-4">
+                <div className="NT-Card mt-5">
                     <Row>
                         <Col sm="6">
                             <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>YOUR CURRENT ALLOCATION VALUE</p>
