@@ -5,10 +5,25 @@
 }
 
 .custom-unlock-card {
-    border-radius: 0px !important;
-    box-shadow: 0 14px 0px -8px rgba(255, 255, 255, 0.4), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #212121 !important;
+    color: white !important;
+    border-radius: 15px !important;
+    // box-shadow: 0 14px 0px -8px rgba(255, 255, 255, 0.4), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     .btn.btn-primary {
         border-radius: 50px !important;
+    }
+}
+
+.wallet-box {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #493C3C;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        background: #F9D85E57;
     }
 }
