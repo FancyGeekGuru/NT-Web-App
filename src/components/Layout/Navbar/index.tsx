@@ -18,9 +18,10 @@ const Navbar = () => {
   return (
     <BsNavbar collapseOnSelect className='' expand='md' variant='dark'>
       <Container>
+        <div></div>
         <BsNavbar.Toggle aria-controls='responsive-navbar-nav' />
         <BsNavbar.Collapse id='responsive-navbar-nav' className='nav-menu-wrap'>
-          <Nav role='navigation'>
+          <Nav role='navigation' className='ml-auto'>
             <Link to={routeNames.dashboard} aria-current='page' className='custom-link-button custom-nav-link'>
               DASHBOARD
             </Link>
@@ -37,22 +38,19 @@ const Navbar = () => {
               UTILITY+
             </Link>
             <div style={{ width: '1rem' }}/>
+            {isLoggedIn ? (
+              <NavItem onClick={handleLogout} className='custom-link-button custom-nav-auth-button'>
+                Disconnect Wallet
+              </NavItem>
+            ) : (
+              <Link to={routeNames.unlock} className='custom-link-button custom-nav-auth-button'>
+                <img src={WalletPng} style={{ paddingRight: '.6rem' }} />
+                <span>Connect Wallet</span>
+              </Link>
+            )}
           </Nav>
         </BsNavbar.Collapse>
-        <div>
-              {isLoggedIn ? (
-                <NavItem onClick={handleLogout} className='custom-link-button custom-nav-auth-button'>
-                  Disconnect Wallet
-                </NavItem>
-              ) : (
-                <Link to={routeNames.unlock} className='custom-link-button custom-nav-auth-button'>
-                  <img src={WalletPng} style={{ paddingRight: '.6rem' }} />
-                  <span>Connect Wallet</span>
-                </Link>
-              )}
-        </div>
       </Container>
-      
     </BsNavbar>
   );
 };

@@ -11,13 +11,13 @@ const Earn = () => {
                 <div className='d-flex align-items-baseline'>
                     <p className="page-title"> EARN </p>
                     <div style={{ cursor: 'pointer' }}>
-                        <span className='ml-3' style={{ fontFamily: 'SF Pro Text Bold', color: '#CEC0C0', fontSize:'13px' }}>Docs</span>
+                        <span className='ml-3' style={{ fontFamily: 'SF Pro Text Bold', color: '#CEC0C0' }}>Docs</span>
                         <img className='ml-1' src={externalLink} />
                     </div>
                 </div>
                 <div className="NT-Card mt-4">
-                    <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL BALANCE</p>
-                    <p style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy', paddingBottom: '50px' }}>532.875 <span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
+                    <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL BALANCE</p>
+                    <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy', paddingBottom: '50px' }}>532.875 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
                     <div className='d-flex' style={{ justifyContent: 'right' }}>
                         <button className='my-page-deposit-but'>Deposit</button>
                         <button className='my-page-withdraw-but'>Withdraw</button>
@@ -63,11 +63,11 @@ const Earn = () => {
 
                 <div className='mt-5 NT-Card'>
                     <div className='d-flex align-items-center'>
-                        <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>EXPECTED INTEREST BASED ON YOUR DEPOSIT</p>
+                        <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>EXPECTED INTEREST BASED ON YOUR DEPOSIT</p>
                         <img className='ml-3' src={warnIcon} alt='warn' />
                     </div>
 
-                    <span style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy' }}>432,875 <span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></span>
+                    <span style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy' }}>432,875 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></span>
 
 
 

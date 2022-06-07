@@ -11,57 +11,57 @@ const Utility = () => {
                 <div className='d-flex align-items-baseline'>
                     <p className="page-title"> UTILITY + </p>
                     <div style={{ cursor: 'pointer' }}>
-                        <span className='ml-3' style={{ fontFamily: 'SF Pro Text Bold', color: '#CEC0C0', fontSize:'13px' }}>Docs</span>
+                        <span className='ml-3' style={{ fontFamily: 'SF Pro Text Bold', color: '#CEC0C0' }}>Docs</span>
                         <img className='ml-1' src={externalLink} />
                     </div>
                 </div>
 
                 <p style={{ fontSize: '15px', fontFamily: 'SF Pro Text Bold', paddingTop: '20px' }}>COMMUNITY FARMING EVENT 🚜</p>
 
-                <div className="NT-Card mt-4" style={{width:'1220px'}}>
+                <div className="NT-Card mt-4">
                     <Row>
                         <Col sm="6">
-                            <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>CURRENT NearT PRICE</p>
-                            <p style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy', paddingBottom: '20px' }}>0.25<span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}> USD</span></p>
+                            <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>CURRENT NearT PRICE</p>
+                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy', paddingBottom: '20px' }}>0.25<span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}> USD</span></p>
                         </Col>
                         <Col sm="6">
-                            <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy', color: '#CEBFBF' }}>PROJECTED NearT PRICE</p>
-                            <p style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy', paddingBottom: '20px', color: '#CEBFBF' }}>1.25 <span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy', color: '#CEBFBF' }}>USD</span></p>
+                            <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy', color: '#CEBFBF' }}>PROJECTED NearT PRICE</p>
+                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy', paddingBottom: '20px', color: '#CEBFBF' }}>1.25 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy', color: '#CEBFBF' }}>USD</span></p>
                         </Col>
                     </Row>
                     <button className='deposit-free-but'>DEPOSIT NOW & GET FREE NearT</button>
                 </div>
 
-                <div className="NT-Card mt-5" style={{width:'1220px'}}>
+                <div className="NT-Card mt-5">
                     <Row>
                         <Col sm="6">
-                            <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>YOUR FARMED NearT Tokens</p>
-                            <p style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy' }}>52,875.97<span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}> NearT</span></p>
+                            <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>YOUR FARMED NearT Tokens</p>
+                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy' }}>52,875.97<span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}> NearT</span></p>
                         </Col>
                         <Col sm="6">
-                            <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy', color: '#CEBFBF' }}>YOUR PROJECTED SHARE OF NearT Tokens</p>
-                            <p style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy', color: '#CEBFBF' }}>1,152,875,97 <span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}>NearT</span></p>
+                            <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy', color: '#CEBFBF' }}>YOUR PROJECTED SHARE OF NearT Tokens</p>
+                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy', color: '#CEBFBF' }}>1,152,875,97 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>NearT</span></p>
                         </Col>
                     </Row>
                 </div>
 
-                <div className="NT-Card mt-5" style={{width:'1220px'}}>
+                <div className="NT-Card mt-5">
                     <Row>
                         <Col sm="6">
-                            <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>YOUR CURRENT ALLOCATION VALUE</p>
-                            <p style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy' }}>$10,355<span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}> USD</span></p>
+                            <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>YOUR CURRENT ALLOCATION VALUE</p>
+                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy' }}>$10,355<span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}> USD</span></p>
                         </Col>
                         <Col sm="6">
-                            <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy', color: '#CEBFBF' }}>YOUR PROJECTED ALLOCATION VALUE</p>
-                            <p style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy', color: '#CEBFBF' }}>$122,875<span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}> USD</span></p>
+                            <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy', color: '#CEBFBF' }}>YOUR PROJECTED ALLOCATION VALUE</p>
+                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy', color: '#CEBFBF' }}>$122,875<span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}> USD</span></p>
                         </Col>
                     </Row>
                 </div>
 
-                <div className='NT-Card mt-5' style={{width:'1220px'}}>
+                <div className='NT-Card mt-5'>
                     <Row className='align-items-center'>
                         <Col sm="5">
-                            <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>HOW MUCH NearT CAN I EARN?</p>
+                            <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>HOW MUCH NearT CAN I EARN?</p>
 
                             <button className='deposit-free-but mt-5'>DEPOSIT NOW & GET FREE NearT</button>
                         </Col>
@@ -85,20 +85,20 @@ const Utility = () => {
                     </Row>
                 </div>
 
-                <p className='mt-5' style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>MONTHLY REWARDS PLUS PROGRAM</p>
+                <p className='mt-5' style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>MONTHLY REWARDS PLUS PROGRAM</p>
 
-                <div className='NT-Card' style={{width:'1220px'}}>
+                <div className='NT-Card'>
                     <Row>
                         <Col sm="6">
-                            <p style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>NEAR TREASURY REWARDS PLUS PROGRAM</p>
-                            <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy', marginTop:'60px' }}>YOUR QUALIFIED DEPOSIT VALUE</p>
-                            <p style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy' }}>52,875.97<span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}> USD</span></p>
+                            <p style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>NEAR TREASURY REWARDS PLUS PROGRAM</p>
+                            <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy', marginTop:'60px' }}>YOUR QUALIFIED DEPOSIT VALUE</p>
+                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy' }}>52,875.97<span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}> USD</span></p>
 
                             <button className='deposit-free-but mt-4'>SAVE NOW</button>
                         </Col>
 
                         <Col sm="6">
-                            <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>QUALIFYING PHASE STATUS</p>
+                            <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>QUALIFYING PHASE STATUS</p>
 
                             <div className='d-flex mt-3'>
                                 <div className='NT-Badge'>ACTIVE</div>
