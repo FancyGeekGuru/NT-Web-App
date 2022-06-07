@@ -81,7 +81,7 @@ const Dashboard = () => {
             },
             axisTicks: {
                 show: false,
-            },
+            },  
             crosshairs: {
                 show: false
             },
@@ -112,23 +112,26 @@ const Dashboard = () => {
             width: 1,
         },
     };
-
+    const [years, setYears] = useState(10);
+    const handleSlider = (e:any) => {
+        setYears(e.target.value);
+    };
     return (
         <>
             <Container className='mb-5'>
                 <div className='d-flex align-items-baseline'>
                     <p className="page-title"> DASHBOARD </p>
                     <div style={{ cursor: 'pointer' }}>
-                        <span className='ml-3' style={{ fontFamily: 'SF Pro Text Bold', color: '#CEC0C0' }}>Docs</span>
+                        <span className='ml-3' style={{ fontFamily: 'SF Pro Text Bold', color: '#CEC0C0', fontSize:'13px'}}>Docs</span>
                         <img className='ml-1' src={externalLink} />
                     </div>
                 </div>
 
-                <div className="NT-Card mt-4">
+                <div className="NT-Card mt-4" style={{width: '1220px'}}>
                     <Row className='d-flex align-items-center'>
                         <Col className="borderRight" md="4">
-                            <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL VALUE LOCKED</p>
-                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy' }}>165,859,532 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
+                            <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL VALUE LOCKED</p>
+                            <p style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy' }}>165,859,532 <span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
 
                             <Row className='mt-4 d-flex align-items-center justify-content-center'>
                                 <RadialChart
@@ -141,7 +144,7 @@ const Dashboard = () => {
                                     <div>
                                         <div className='d-flex align-items-center'>
                                             <div className='chart-state' style={{ background: '#F9D85E' }} />
-                                            <span className='ml-2' style={{ fontFamily: 'SF Pro Text Bold' }}>STABLE COINS</span>
+                                            <span className='ml-2' style={{ fontFamily: 'SF Pro Text Bold'}}>STABLE COINS</span>
                                         </div>
                                         <span style={{ fontSize: '12px', fontStyle: 'italic', fontFamily: 'SF Pro Text' }}>$ 40,859,532,875</span>
                                     </div>
@@ -162,14 +165,14 @@ const Dashboard = () => {
                     </Row>
                 </div>
 
-                <div className="NT-Card mt-5">
+                <div className="NT-Card mt-5" style={{width: '1220px'}}>
                     <Table>
                         <Thead>
                             <Tr>
                                 <Th width='28%'> Name </Th>
                                 <Th width='20%'> APY </Th>
-                                <Th > TVL </Th>
-                                <Th width='30%'> Actions </Th>
+                                <Th> TVL </Th>
+                                <Th width='30%' style={{ textAlign: 'center'}}> Actions </Th>
                             </Tr>
                         </Thead>
                         <Tbody>
@@ -207,7 +210,7 @@ const Dashboard = () => {
                     </Table>
                 </div>
 
-                <div className="NT-Card mt-5">
+                <div className="NT-Card mt-5" style={{width: '1220px'}}>
                     <Row>
                         <Col md="3" className="borderRight">
                             <span style={{ fontFamily: 'SF Pro Text Heavy', fontSize: '18px' }}>HOW MUCH CAN I EARN?</span>
@@ -215,15 +218,24 @@ const Dashboard = () => {
                             <div className='d-flex flex-column mt-5'>
                                 <Dropdown className="w-100" drop='down' style={{ width: '150px' }}>
                                     <Dropdown.Toggle className='token-id-toggle' id="token-id">
-                                        <span style={{ fontFamily: 'SF Pro Text Heavy', fontSize: '22px' }}>STABLE COIN</span>
+                                        <span style={{ fontFamily: 'SF Pro Text Heavy', fontSize: '22px' }}>USDC</span>
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu className="token-id-menu">
-                                        <Dropdown.Item>
+                                        {/* <Dropdown.Item>
                                             <span style={{ fontFamily: 'SF Pro Text ', fontSize: '16px' }}>STABLE COIN</span>
                                         </Dropdown.Item>
                                         <Dropdown.Item>
                                             <span style={{ fontFamily: 'SF Pro Text', fontSize: '16px' }}>VOLATILE COIN</span>
-                                        </Dropdown.Item>
+                                        </Dropdown.Item> */}
+                                        {
+                                            coins.map((coin, index) => {
+                                                return (
+                                                    <Dropdown.Item key={index}>
+                                                        <span style={{fontFamily:'SF Pro Text ', fontSize: '16px'}}>{coin.identifier}</span>
+                                                    </Dropdown.Item>
+                                                );
+                                            })
+                                        }
                                     </Dropdown.Menu>
                                 </Dropdown>
                                 <span style={{ fontFamily: 'SF Pro Text', fontSize: '11px', color: '#CEC0C0' }}>Your Deposit</span>
@@ -235,11 +247,14 @@ const Dashboard = () => {
                             </div>
 
                             <div className='mt-5'>
-                                <span style={{ fontFamily: 'SF Pro Text Heavy', fontSize: '22px' }}>10 Years</span>
+                                <span style={{ fontFamily: 'SF Pro Text Heavy', fontSize: '22px' }}>{years} Years</span>
                                 <AirbnbSlider
                                     components={{ Thumb: AirbnbThumbComponent }}
                                     getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
-                                    defaultValue={60}
+                                    defaultValue={10}
+                                    max={10}
+                                    min={0}
+                                    onChange={e => handleSlider(e)}
                                 />
                             </div>
                         </Col>
@@ -275,9 +290,9 @@ const Dashboard = () => {
                     </Row>
                 </div>
 
-                <div className="NT-Card mt-5">
-                    <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TVL OF THE ENTIRE ECOSYSTEM</p>
-                    <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy' }}>525,859,532,875 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
+                <div className="NT-Card mt-5" style={{width: '1220px'}}>
+                    <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TVL OF THE ENTIRE ECOSYSTEM</p>
+                    <p style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy' }}>525,859,532,875 <span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
 
                     <Chart options={options} series={series} type="area" height='300' />
                 </div>

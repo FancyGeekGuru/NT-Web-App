@@ -13,7 +13,8 @@ export const coins = [
         APY: 14.87,
         value: 47243230,
         tValue: 47243230,
-        url: USDC
+        url: USDC,
+        type: 1,
     },
     {
         identifier: 'USDT',
@@ -21,7 +22,8 @@ export const coins = [
         APY: 14.87,
         value: 10243230,
         tValue: 10243230,
-        url: USDT
+        url: USDT,
+        type: 1,
     },
     {
         identifier: 'DAI',
@@ -29,7 +31,8 @@ export const coins = [
         APY: 14.87,
         value: 7443230,
         tValue: 7443230,
-        url: DAI
+        url: DAI,
+        type: 2,
     },
     {
         identifier: 'USN',
@@ -37,7 +40,8 @@ export const coins = [
         APY: 14.87,
         value: 243230,
         tValue: 243230,
-        url: USN
+        url: USN,
+        type: 1,
     },
     {
         identifier: 'wBTC',
@@ -45,7 +49,8 @@ export const coins = [
         APY: 9.87,
         value: 10230.00,
         tValue: 538230,
-        url: wBTC
+        url: wBTC,
+        type: 2,
     },
     {
         identifier: 'ETH',
@@ -53,7 +58,8 @@ export const coins = [
         APY: 9.87,
         value: 3230.00,
         tValue: 543230,
-        url: ETH
+        url: ETH,
+        type: 2,
     },
     {
         identifier: 'wNEAR',
@@ -61,6 +67,7 @@ export const coins = [
         APY: 9.87,
         value: 116829.00,
         tValue: 1443230,
-        url: wNEAR
+        url: wNEAR,
+        type: 2,
     },
 ];

@@ -1,6 +1,6 @@
 .page-title {
     font-family: 'SF Pro Text Bold';
-    font-size: 30px;
+    font-size: 40px;
     line-height: 120%;
     letter-spacing: -1px;
 }
@@ -8,7 +8,7 @@
 .NT-Card {
     border-radius: 25px;
     background: #212121;
-    padding: 40px 40px;
+    padding: 50px 60px;
 }
 
 .radial-chart {
@@ -72,7 +72,7 @@
     padding: 15px;
 }
 
-@media screen and (max-width: 52em) {
+@media screen and (max-width: 52em) {   
     /*
       Force table elements to not behave like tables anymore
       Hide table headers (but not display: none;, for accessibility)
@@ -134,12 +134,12 @@
 .deposit-but {
     background: #493C3C;
     border: none;
-    border-radius: 15px;
+    border-radius: 25px;
     font-family: 'SF Pro Text';
-    font-Size: 12px;
+    font-Size: 13px;
     color: white;
     padding: 5px;
-    width: 100px;
+    width: 134px;
     transition: .3s ease-in-out;
 
     &:hover {
@@ -150,13 +150,13 @@
 .withdraw-but {
     background: transparent;
     border: 1px solid #CEBFBF;
-    border-radius: 15px;
+    border-radius: 25px;
     font-family: 'SF Pro Text';
-    font-Size: 12px;
+    font-Size: 13px;
     color: #CEBFBF;
     padding: 5px;
-    width: 100px;
-    margin-left: 19px;
+    width: 134px;
+    margin-left: 10px;
 
     @media (max-width: 992px) {
         margin-left: 0;
