@@ -11,9 +11,9 @@ const Footer = () => {
             target: '_blank'
           }}
           className='custom-footer-link d-flex align-items-center'
-          href='https://github.com/tomio111'
+          href='https://github.com/fancydev0225'
         >
-          Made with <HeartIcon className='mx-1' /> by Tomio
+          Made with <HeartIcon className='mx-1' /> by Fancy
         </a>
       </div>
     </footer>
