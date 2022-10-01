@@ -119,7 +119,7 @@ const Dashboard = () => {
                 <div className='d-flex align-items-baseline'>
                     <p className="page-title"> DASHBOARD </p>
                     <div style={{ cursor: 'pointer' }}>
-                        <span className='ml-3' style={{ fontFamily: 'SF Pro Text Bold', color: '#CEC0C0' }}>Docs</span>
+                        <span className='ml-3' style={{ fontFamily: 'SF Pro Text Bold', color: '#CEC0C0', fontSize:'13px'}}>Docs</span>
                         <img className='ml-1' src={externalLink} />
                     </div>
                 </div>
@@ -127,8 +127,8 @@ const Dashboard = () => {
                 <div className="NT-Card mt-4">
                     <Row className='d-flex align-items-center'>
                         <Col className="borderRight" md="4">
-                            <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL VALUE LOCKED</p>
-                            <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy' }}>165,859,532 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
+                            <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL VALUE LOCKED</p>
+                            <p style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy' }}>165,859,532 <span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
 
                             <Row className='mt-4 d-flex align-items-center justify-content-center'>
                                 <RadialChart
@@ -141,7 +141,7 @@ const Dashboard = () => {
                                     <div>
                                         <div className='d-flex align-items-center'>
                                             <div className='chart-state' style={{ background: '#F9D85E' }} />
-                                            <span className='ml-2' style={{ fontFamily: 'SF Pro Text Bold' }}>STABLE COINS</span>
+                                            <span className='ml-2' style={{ fontFamily: 'SF Pro Text Bold'}}>STABLE COINS</span>
                                         </div>
                                         <span style={{ fontSize: '12px', fontStyle: 'italic', fontFamily: 'SF Pro Text' }}>$ 40,859,532,875</span>
                                     </div>
@@ -168,8 +168,8 @@ const Dashboard = () => {
                             <Tr>
                                 <Th width='28%'> Name </Th>
                                 <Th width='20%'> APY </Th>
-                                <Th > TVL </Th>
-                                <Th width='30%'> Actions </Th>
+                                <Th> TVL </Th>
+                                <Th width='30%' style={{ textAlign: 'center'}}> Actions </Th>
                             </Tr>
                         </Thead>
                         <Tbody>
@@ -276,8 +276,8 @@ const Dashboard = () => {
                 </div>
 
                 <div className="NT-Card mt-5">
-                    <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TVL OF THE ENTIRE ECOSYSTEM</p>
-                    <p style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy' }}>525,859,532,875 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
+                    <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TVL OF THE ENTIRE ECOSYSTEM</p>
+                    <p style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy' }}>525,859,532,875 <span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></p>
 
                     <Chart options={options} series={series} type="area" height='300' />
                 </div>

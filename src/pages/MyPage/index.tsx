@@ -17,7 +17,7 @@ const MyPage = () => {
                 <div className='d-flex align-items-baseline'>
                     <p className="page-title"> MY PAGE </p>
                     <div style={{ cursor: 'pointer' }}>
-                        <span className='ml-3' style={{ fontFamily: 'SF Pro Text Bold', color: '#CEC0C0' }}>Docs</span>
+                        <span className='ml-3' style={{ fontFamily: 'SF Pro Text Bold', color: '#CEC0C0', fontSize:'13px' }}>Docs</span>
                         <img className='ml-1' src={externalLink} />
                     </div>
                 </div>
@@ -26,32 +26,32 @@ const MyPage = () => {
                     <Col md='7' className='mt-4'>
                         <div className="NT-Card">
                             <div className='d-flex align-items-center'>
-                                <p className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL VALUE</p>
+                                <p className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL VALUE</p>
                                 <img className='ml-3' src={warnIcon} alt='warn' />
                             </div>
 
-                            <span style={{ fontSize: '28px', fontFamily: 'SF Pro Text Heavy' }}>2,665,750.99 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></span>
+                            <span style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy' }}>2,665,750.99 <span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></span>
 
                             <Row className='d-flex align-items-center justify-content-between' style={{ paddingLeft: '20px' }}>
                                 <div>
                                     <div>
                                         <div className='d-flex align-items-center'>
                                             <div className='chart-state' style={{ background: '#F72585' }} />
-                                            <span className='ml-2' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '18px' }}>Total Balance</span>
+                                            <span className='ml-2' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '20px' }}>Total Balance</span>
                                         </div>
                                         <span style={{ fontSize: '12px', fontStyle: 'italic', fontFamily: 'SF Pro Text', color: '#CEBFBF' }}>$ 2,665,750.99 USD</span>
                                     </div>
                                     <div className='mt-3'>
                                         <div className='d-flex align-items-center'>
                                             <div className='chart-state' style={{ background: 'black' }} />
-                                            <span className='ml-2' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '18px' }}>Stable Coins</span>
+                                            <span className='ml-2' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '20px' }}>Stable Coins</span>
                                         </div>
                                         <span style={{ fontSize: '12px', fontStyle: 'italic', fontFamily: 'SF Pro Text', color: '#CEBFBF' }}>$ 1,999,313.24</span>
                                     </div>
                                     <div className='mt-3'>
                                         <div className='d-flex align-items-center'>
                                             <div className='chart-state' style={{ background: '#F9D85E' }} />
-                                            <span className='ml-2' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '18px' }}>Volatile Asset Balance</span>
+                                            <span className='ml-2' style={{ fontFamily: 'SF Pro Text Bold', fontSize: '20px' }}>Volatile Asset Balance</span>
                                         </div>
                                         <span style={{ fontSize: '12px', fontStyle: 'italic', fontFamily: 'SF Pro Text', color: '#CEBFBF' }}>$ 666,437.74</span>
                                     </div>
@@ -70,12 +70,12 @@ const MyPage = () => {
                     <Col md='5' className='mt-4'>
                         <div className="NT-Card" style={{ height: '100%' }}>
                             <div className='d-flex align-items-center'>
-                                <span className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL PAYED INTEREST</span>
+                                <span className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL PAYED INTEREST</span>
                                 <img className='ml-3' src={warnIcon} alt='warn' />
                             </div>
 
                             <div>
-                                <span style={{ fontSize: '30px', fontFamily: 'SF Pro Text Heavy' }}>93,332.75 <span style={{ fontSize: '17px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></span>
+                                <span style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy' }}>93,332.75 <span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}>USD</span></span>
                             </div>
 
                             <div>
@@ -84,12 +84,12 @@ const MyPage = () => {
 
 
                             <div className='d-flex align-items-center mt-5'>
-                                <span className="mb-0" style={{ fontSize: '17px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL DAYS STAKED</span>
+                                <span className="mb-0" style={{ fontSize: '20px', letterSpacing: '-0.01rem', fontFamily: 'SF Pro Text Heavy' }}>TOTAL DAYS STAKED</span>
                                 <img className='ml-3' src={warnIcon} alt='warn' />
                             </div>
 
                             <div>
-                                <span style={{ fontSize: '30px', fontFamily: 'SF Pro Text Heavy' }}>17 <span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}>DAYS</span></span>
+                                <span style={{ fontSize: '35px', fontFamily: 'SF Pro Text Heavy' }}>17 <span style={{ fontSize: '20px', fontFamily: 'SF Pro Text Heavy' }}>DAYS</span></span>
                             </div>
 
                             <div style={{ marginTop: '100px' }}>
