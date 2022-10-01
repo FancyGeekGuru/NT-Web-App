@@ -7,7 +7,6 @@ const DEFAULT_COLOR = '#040404';
 class RadialChart extends Component {
     state = {}
     componentDidMount() {
-        // For initial animation
         setTimeout(() => {
             this.setState({ setStrokeLength: true });
         });
@@ -16,7 +15,7 @@ class RadialChart extends Component {
         const { setStrokeLength } = this.state;
         const {
             className,
-            radius,
+            radius, 
             progress,
             strokeWidth,
             dimension,
